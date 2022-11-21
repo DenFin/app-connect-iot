@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <div class="font-bold">BEGA Connect</div>
 </template>

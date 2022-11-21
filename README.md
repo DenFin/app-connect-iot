@@ -21,3 +21,7 @@ pnpm typecheck
 ```
 
 -https://nuxt.com/docs/guide/concepts/typescript#typescript
+
+## Tailwind
+
+Tailwind config should be placed in `tailwind.config.js` file.
