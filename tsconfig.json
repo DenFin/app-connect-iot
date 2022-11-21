@@ -1,4 +1,9 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  "extends": "./.nuxt/tsconfig.json",
+  "exclude": ["coverage", "dist", "node_modules"],
+  "compilerOptions": {
+    // Preserve type checking in SFC templates, see https://github.com/johnsoncodehk/volar/issues/1219#issuecomment-1104548432
+    "jsx": "preserve"
+  }
 }
