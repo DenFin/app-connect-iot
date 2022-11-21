@@ -25,3 +25,15 @@ pnpm typecheck
 ## Tailwind
 
 Tailwind config should be placed in `tailwind.config.js` file.
+
+## Commitlint
+
+Commitlint is used to lint the commit messages. It is configured to use the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) format.
+
+- https://github.com/conventional-changelog/commitlint
+
+## husky
+
+husky is used to run the linting and type checking before commiting the code.
+
+- https://typicode.github.io/husky/#/
