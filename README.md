@@ -37,3 +37,15 @@ Commitlint is used to lint the commit messages. It is configured to use the [con
 husky is used to run the linting and type checking before commiting the code.
 
 - https://typicode.github.io/husky/#/
+
+## changelogen
+
+changelogen is used to generate the changelog file and bump the version.
+
+run following command to generate the changelog file
+
+```sh
+pnpm changelog
+```
+
+- https://github.com/unjs/changelogen
