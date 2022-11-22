@@ -8,3 +8,8 @@ node_modules
 dist
 .idea
 .vscode
+.DS_Store
+coverage
+
+# Auto generate on postinstall step
+auto-imports.d.ts

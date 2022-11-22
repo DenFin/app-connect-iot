@@ -49,3 +49,17 @@ pnpm changelog
 ```
 
 - https://github.com/unjs/changelogen
+
+## Testing
+
+run following command to run the tests
+
+```sh
+pnpm test
+```
+
+- Use `testing-library/vue` for component testing
+- Use `vitest` for unit testing
+- Use `cypress` for e2e testing
+
+- https://vuejs.org/guide/scaling-up/testing.html#why-test

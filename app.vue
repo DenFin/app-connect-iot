@@ -1,6 +1,6 @@
 <template>
   <div class="m-4">
-    <BegaLogo icon="BegaConnectLogo" />
+    <BegaLogo icon="BegaConnectLogo" data-testid="connect-logo" />
   </div>
 </template>
 
