@@ -38,6 +38,7 @@
     "vue-tsc": "^1.0.9"
   },
   "dependencies": {
-    "@kernpunkt/bega-component-library": "0.0.22"
+    "@kernpunkt/bega-component-library": "0.0.22",
+    "@pinia/nuxt": "0.4.5"
   }
 }
