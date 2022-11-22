@@ -1,3 +1,7 @@
+# BEGA Connect
+
+![Logo](./docs/logo.svg)
+
 ## Eslint
 
 run following command to lint the code
