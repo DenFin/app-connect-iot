@@ -49,6 +49,7 @@ export default defineConfig({
         '**/*.config.*',
         'test/**/*',
         '**/*.d.ts',
+        'cypress/**/*',
       ],
     },
     setupFiles: ['./test/setup.ts'],
