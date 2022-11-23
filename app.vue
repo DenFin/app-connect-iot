@@ -3,7 +3,7 @@
     <BegaLogo icon="BegaConnectLogo" data-testid="connect-logo" />
     <div>
       <form>
-        <select v-model="locale">
+        <select v-model="$i18n.locale">
           <option value="en">en</option>
           <option value="de">de</option>
         </select>
@@ -15,5 +15,4 @@
 
 <script setup lang="ts">
 import { BegaLogo } from '@kernpunkt/bega-component-library'
-const { locale } = useI18n()
 </script>

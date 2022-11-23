@@ -41,7 +41,7 @@ export default defineConfig({
       enabled: true,
       provider: 'c8',
       all: true,
-      reporter: ['text', 'lcov', 'html'],
+      reporter: ['text', 'lcov', 'html', 'cobertura'],
       exclude: [
         '**/*.test.ts',
         '.nuxt',

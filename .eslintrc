@@ -6,5 +6,5 @@
     "plugin:tailwindcss/recommended",
     "prettier"
   ],
-  "ignorePatterns": ["node_modules/", ".nuxt/", ".output", "dist/"]
+  "ignorePatterns": ["node_modules", ".nuxt/", ".output", "dist/"]
 }

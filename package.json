@@ -11,6 +11,7 @@
     "typecheck": "nuxi typecheck",
     "prepare": "husky install",
     "changelog": "npx changelogen@latest --bump",
+    "cy": "./node_modules/.bin/cypress run --headless",
     "test": "pnpm postinstall && vitest run",
     "test:coverage": "pnpm postinstall && vitest run --coverage",
     "test:watch": "pnpm postinstall && vitest --watch"

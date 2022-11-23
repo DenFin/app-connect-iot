@@ -1,0 +1,46 @@
+image: node:18
+
+stages:
+  - test
+
+eslint:
+  stage: test
+  before_script:
+    - curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm@7
+    - pnpm config set store-dir .pnpm-store
+    - pnpm config set -- '//gitlab.com/api/v4/projects/38422864/packages/npm/:_authToken' "${CI_JOB_TOKEN}"
+    - pnpm install
+  script:
+    - pnpm lint
+
+vitest:
+  stage: test
+  before_script:
+    - curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm@7
+    - pnpm config set store-dir .pnpm-store
+    - pnpm config set -- '//gitlab.com/api/v4/projects/38422864/packages/npm/:_authToken' "${CI_JOB_TOKEN}"
+    - pnpm install
+  script:
+    - pnpm test
+  coverage: '/^(?:Lines)\s*:\s*([^%]+)/'
+  artifacts:
+    when: always
+    expire_in: 1 day
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
+
+e2e:
+  stage: test
+  image: cypress/browsers:node18.12.0-chrome103-ff107
+  before_script:
+    - curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm@7
+    - pnpm config set store-dir .pnpm-store
+    - pnpm config set -- '//gitlab.com/api/v4/projects/38422864/packages/npm/:_authToken' "${CI_JOB_TOKEN}"
+    - pnpm install
+  script:
+    - pnpm cy
+#  only:
+#    - main
+  allow_failure: true
