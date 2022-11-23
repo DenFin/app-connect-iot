@@ -49,7 +49,13 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li>
+      <a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#i18n">i18n</a></li>
+        <li><a href="#cli-commands">CLI Commands</a></li>
+      </ul>
+    </li>
     <li><a href="#contributing">Contributing</a></li>
   </ol>
 </details>
@@ -124,6 +130,19 @@ This project requires the following tools to be installed:
 <!-- USAGE EXAMPLES -->
 
 ## Usage
+
+### i18n
+
+We are using the next version of the [i18n module](https://v8.i18n.nuxtjs.org/getting-started/setup), which is still in beta, but it's stable enough to be used in production.
+All language json-files are located in the `i18n` folder and are named after the language code. The default language is `de`.
+
+To use the key/value pairs in the template, you can use the `$t` function. For example:
+
+```html
+<h1>{{ $t('welcome') }}</h1>
+```
+
+### CLI Commands
 
 Usefule commands to run various tasks needed during development:
 
