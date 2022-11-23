@@ -1,69 +1,203 @@
-# BEGA Connect
+<!-- Template taken from https://github.com/othneildrew/Best-README-Template/ -->
 
-![Logo](./docs/logo.svg)
+<a name="readme-top"></a>
 
-## Eslint
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-run following command to lint the code
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://gitlab.com/kernpunkt/bega/bega-connect/app-connect-iot">
+    <img src="docs/logo.svg" alt="Logo">
+  </a>
 
-```sh
-pnpm lint
-pnpm lint:fix // to fix the linting errors
-```
+<h3 align="center">BEGA Connect IoT App</h3>
 
-- https://eslint.vuejs.org/
-- https://github.com/nuxt/eslint-config#typescript
-- https://github.com/francoismassart/eslint-plugin-tailwindcss
-- https://github.com/prettier/eslint-config-prettier
+  <p align="center">
+    This repository holds the code of the BEGA Connect IoT App.
+    <br />
+    <a href="#"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://connect-app-iot-prod.netlify.app/">View Live</a>
+    ·
+    <a href="https://kernpunkt.atlassian.net/jira/software/c/projects/BCWA/boards/22">Report Bug</a>
+  </p>
+</div>
 
-## TypeScript
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+  </ol>
+</details>
 
-run following command to check the types
+<!-- ABOUT THE PROJECT -->
 
-```sh
-pnpm typecheck
-```
+## About The Project
 
--https://nuxt.com/docs/guide/concepts/typescript#typescript
+[![Product Name Screen Shot][product-screenshot]](https://connect-app-iot-prod.netlify.app/)
 
-## Tailwind
+Right now it's just a boilerplate for the BEGA Connect IoT App. With all necessary dependencies and libraries installed.
+More to come soon. 🤞
 
-Tailwind config should be placed in `tailwind.config.js` file.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Commitlint
+### Built With
 
-Commitlint is used to lint the commit messages. It is configured to use the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) format.
+[![Nuxt][nuxt.com]][nuxt-url]
+[![Vue][vue.js]][vue-url]
+[![Tailwind][tailwindcss.com]][tailwind-url]
+[![TypeScript][typescriptlang.org]][typescript-url]
+[![ESLint][eslint.org]][eslint-url]
+[![Prettier][prettier.io]][prettier-url]
+[![Commitlint][commitlint.js]][commitlint-url]
+[![Changelogen][changelogen]][changelogen-url]
+[![Husky][husky]][husky-url]
+[![Vite][vitejs.dev]][vite-url]
+[![Vitest][vitest.dev]][vitest-url]
+[![Cy][cypress.io]][cypress-url]
+[![Netlify][netlify.com]][netlify-url]
+[![Pinia][pinia]][pinia-url]
+[![Gitlab][gitlab.com]][gitlab-url]
+[![Testing Library][testing-library.com]][testing-library-url]
 
-- https://github.com/conventional-changelog/commitlint
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## husky
+<!-- GETTING STARTED -->
 
-husky is used to run the linting and type checking before commiting the code.
+## Getting Started
 
-- https://typicode.github.io/husky/#/
+### Prerequisites
 
-## changelogen
+This project requires the following tools to be installed:
 
-changelogen is used to generate the changelog file and bump the version.
+- [Node.js +v18](https://nodejs.org/en/) (best to be installed via nvm or n)
+- [nvm](https://github.com/nvm-sh/nvm) or [n](https://github.com/tj/n) (both optional but a big help for managing node versions))
+- npm
 
-run following command to generate the changelog file
+  ```sh
+  npm install npm@latest -g
+  ```
 
-```sh
-pnpm changelog
-```
+- [pnpm](https://pnpm.io/)
 
-- https://github.com/unjs/changelogen
+  ```sh
+  npm install -g pnpm
+  ```
 
-## Testing
+### Installation
 
-run following command to run the tests
+1. Clone the repo
+   ```sh
+   git clone https://gitlab.com/kernpunkt/bega/bega-connect/app-connect-iot
+   ```
+2. Install NPM packages via pnpm
+   ```sh
+   pnpm install
+   ```
 
-```sh
-pnpm test
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- Use `testing-library/vue` for component testing
-- Use `vitest` for unit testing
-- Use `cypress` for e2e testing
+<!-- USAGE EXAMPLES -->
 
-- https://vuejs.org/guide/scaling-up/testing.html#why-test
+## Usage
+
+Usefule commands to run various tasks needed during development:
+
+- `pnpm dev` - run the app in development mode
+- `pnpm build` - build the app for production
+- `pnpm generate` - generate static pages for production
+- `pnpm start` - start the app in production mode
+- `pnpm postinstall` - generate types and tsconfig
+- `pnpm lint` - run the linter
+- `pnpm lint:fix` - run the linter and fix errors
+- `pnpm prepare` - install husky hooks
+- `pnpm changelog` - generate changelog and bump version in package.json
+- `pnpm test` - run the tests
+- `pnpm test:watch` - run the tests in watch mode
+- `pnpm test:coverage` - run the tests and generate a coverage report
+- `pnpm test:e2e` - run the end-to-end tests
+
+_For more examples, explanations and guidelines please refer to the [Documentation](#)_
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## Contributing
+
+If you have to implement a new feature-request or fix some bugs, please clone the repo and create a merge request.
+
+1. Clone the Project
+2. Create your Feature Branch (`git checkout -b feature/BCAW-IssueNumber`)
+3. Commit your Changes (`git commit -m 'feat: implement new feature'`)  
+   3.1. Please use the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format for your commit messages. [More info here](#)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Merge Request
+6. Wait for review
+7. Merge
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[product-screenshot]: docs/screenshot.png
+
+<!-- dependencies -->
+
+[changelogen]: https://img.shields.io/badge/changelogen-yellow?style=for-the-badge&logo=unjs&logoColor=white
+[changelogen-url]: https://github.com/unjs/changelogen
+[commitlint.js]: https://img.shields.io/badge/commitlint-green?style=for-the-badge&logo=commitlint&logoColor=white
+[commitlint-url]: https://github.com/conventional-changelog/commitlint
+[cypress.io]: https://img.shields.io/badge/cypress-blue?style=for-the-badge&logo=cypress&logoColor=white
+[cypress-url]: https://cypress.io
+[eslint.org]: https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white
+[eslint-url]: https://eslint.org/
+[gitlab.com]: https://img.shields.io/badge/gitlab-FC6D27?style=for-the-badge&logo=gitlab&logoColor=white
+[gitlab-url]: https://gitlab.com/kernpunkt/bega/bega-connect/app-connect-iot
+[husky]: https://img.shields.io/badge/husky-4B3263?style=for-the-badge&logo=husky&logoColor=white
+[husky-url]: https://typicode.github.io/husky/#/
+[netlify.com]: https://img.shields.io/badge/netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white
+[netlify-url]: https://netlify.com
+[nuxt.com]: https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82
+[nuxt-url]: https://nuxt.com/
+[pinia]: https://img.shields.io/badge/pinia-4B3263?style=for-the-badge&logo=pinia&logoColor=white
+[pinia-url]: pinia.vuejs.org/
+[prettier.io]: https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white
+[prettier-url]: https://prettier.io/
+[tailwindcss.com]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[tailwind-url]: https://tailwindcss.com
+[testing-library.com]: https://img.shields.io/badge/testing--library-4B3263?style=for-the-badge&logo=testing-library&logoColor=white
+[testing-library-url]: https://testing-library.com/
+[typescriptlang.org]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
+[typescript-url]: https://typescriptlang.org
+[vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[vue-url]: https://vuejs.org/
+[vitejs.dev]: https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white
+[vite-url]: https://vitejs.dev/
+[vitest.dev]: https://img.shields.io/badge/Vitest-646CFF?style=for-the-badge&logo=vite&logoColor=white
+[vitest-url]: https://vitest.dev/
