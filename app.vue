@@ -16,5 +16,3 @@
 <script setup lang="ts">
 import { BegaLogo } from '@kernpunkt/bega-component-library'
 </script>
-
-

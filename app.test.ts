@@ -1,5 +1,4 @@
 import {  describe, test, expect, vi } from 'vitest'
-// import { render } from '@testing-library/vue'
 import { render} from 'test/setup'
 import App from '~/app.vue'
 
@@ -9,7 +8,7 @@ describe('App', () => {
       global: {
         mocks: {
           $t: vi.fn().mockImplementation(() => {
-            return 'hurtz'
+            return 'translation-mock'
           }),
           $i18n: {
             locale: vi.fn()
@@ -18,6 +17,6 @@ describe('App', () => {
       },
     })
     expect(getByTestId('connect-logo')).toBeInTheDocument()
-    expect(getByText('hurtz')).toBeTruthy()
+    expect(getByText('translation-mock')).toBeTruthy()
   })
 })

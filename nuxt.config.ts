@@ -8,6 +8,8 @@ export default defineNuxtConfig({
     typeCheck: true,
     strict: true,
   },
+  // .pnpm-store needs to be ignored due to file watcher chokidar overflow in ci-pipeline see developer handbook (https://link-needs-to-be-udpated)
+  ignore: ['.pnpm-store'],
   i18n: {
     vueI18n: {
       legacy: false,

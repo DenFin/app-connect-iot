@@ -127,6 +127,17 @@ This project requires the following tools to be installed:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Testing
+In order to be able to mock the i18n module and its global methods like $t, we have to write our own render() function to overwrite the default of @testing-library/vue.
+This is done in tests/setup.ts and should be imported as follows:  
+```
+// old
+import { render } from '@testing-library/vue'
+
+// new
+import { render} from 'test/setup'
+```
+
 <!-- USAGE EXAMPLES -->
 
 ## Usage

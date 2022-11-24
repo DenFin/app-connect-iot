@@ -6,10 +6,35 @@ node_modules
 .output
 .env
 dist
-.idea
-.vscode
+
+# Optional pnpm/npm cache directory
+.npm
+.pnpm-store
+
+# Optional eslint cache
+.eslintcache
+
+# macOS
 .DS_Store
-coverage
+
+# Vim swap files
+*.swp
+
+# IDE / Editor
+.idea
+.vscode/*
+*.code-workspace
+
 
 # Auto generate on postinstall step
 auto-imports.d.ts
+
+
+# Testing Frameworks
+coverage
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+results/
+
+test-results.xml

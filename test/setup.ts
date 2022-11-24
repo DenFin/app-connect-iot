@@ -27,25 +27,11 @@ afterEach(() => {
 expect.extend(matchers)
 
 const customRender = (component: any, options?: RenderOptions): RenderResult => {
-  // const defaultOptions = {
-  //   global: {
-  //     mocks: {
-  //       $t: vi.fn().mockImplementation(() => {
-  //         return 'TEST'
-  //       }),
-  //       $i18n: {
-  //         locale: vi.fn(),
-  //       },
-  //     },
-  //   },
-  // }
-
-  // const mergedOptions = Object.assign(defaultOptions, options)
   const mergedOptions = {
     global: {
       mocks: {
         $t: vi.fn().mockImplementation(() => {
-          return 'TEST'
+          return 'improve-this-not-to-have-everywhere-the-same-mock-value'
         }),
         $i18n: {
           locale: vi.fn(),
@@ -60,6 +46,5 @@ const customRender = (component: any, options?: RenderOptions): RenderResult => 
 }
 
 export * from '@testing-library/vue'
-
 export { customRender as render }
 
