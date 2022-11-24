@@ -1,5 +1,6 @@
-import { expect, afterEach } from 'vitest'
-import { cleanup } from '@testing-library/vue'
+/* eslint-disable */
+import { expect, afterEach, vi } from 'vitest'
+import { cleanup, render, RenderOptions, RenderResult } from '@testing-library/vue'
 
 import matchers, {
   TestingLibraryMatchers,
@@ -12,7 +13,8 @@ declare global {
   namespace Vi {
     interface JestAssertion<T = any>
       extends jest.Matchers<void, T>,
-        TestingLibraryMatchers<T, void> {}
+        TestingLibraryMatchers<T, void> {
+    }
   }
 }
 
@@ -24,4 +26,40 @@ afterEach(() => {
 
 expect.extend(matchers)
 
+const customRender = (component: any, options?: RenderOptions): RenderResult => {
+  // const defaultOptions = {
+  //   global: {
+  //     mocks: {
+  //       $t: vi.fn().mockImplementation(() => {
+  //         return 'TEST'
+  //       }),
+  //       $i18n: {
+  //         locale: vi.fn(),
+  //       },
+  //     },
+  //   },
+  // }
+
+  // const mergedOptions = Object.assign(defaultOptions, options)
+  const mergedOptions = {
+    global: {
+      mocks: {
+        $t: vi.fn().mockImplementation(() => {
+          return 'TEST'
+        }),
+        $i18n: {
+          locale: vi.fn(),
+        },
+        ...options?.global?.mocks
+      },
+      ...options?.global
+    },
+    ...options
+  }
+  return render(component, mergedOptions)
+}
+
+export * from '@testing-library/vue'
+
+export { customRender as render }
 

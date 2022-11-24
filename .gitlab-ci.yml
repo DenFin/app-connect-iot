@@ -35,12 +35,10 @@ e2e:
   stage: test
   image: cypress/browsers:node18.12.0-chrome103-ff107
   before_script:
-    - curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm@7
-    - pnpm config set store-dir .pnpm-store
-    - pnpm config set -- '//gitlab.com/api/v4/projects/38422864/packages/npm/:_authToken' "${CI_JOB_TOKEN}"
-    - pnpm install
+    - npm config set -- '//gitlab.com/api/v4/projects/38422864/packages/npm/:_authToken' "${CI_JOB_TOKEN}"
+    - npm install
   script:
-    - pnpm cy
-#  only:
-#    - main
+    - npm cy
+  #  only:
+  #    - main
   allow_failure: true
