@@ -36,7 +36,7 @@ vitest:
         coverage_format: cobertura
         path: coverage/cobertura-coverage.xml
 
-e2e:
+.e2e-tests-template: &e2e_tests
   stage: test
   tags:
     - bega-runner
@@ -46,9 +46,102 @@ e2e:
     - pnpm config set store-dir .pnpm-store
     - pnpm config set -- '//gitlab.com/api/v4/projects/38422864/packages/npm/:_authToken' "${CI_JOB_TOKEN}"
     - pnpm install
+  allow_failure: true
+
+e2e-tests-auto-chrome:
+  <<: *e2e_tests
   script:
-    - pnpm cy:run:ci
+    - pnpm cy:run:ci:chrome
   only:
     - develop
     - main
-  allow_failure: true
+
+e2e-tests-auto-chrome-mobile:
+  <<: *e2e_tests
+  script:
+    - pnpm cy:run:ci:chrome:mobile
+  only:
+    - develop
+    - main
+
+e2e-tests-auto-firefox:
+  <<: *e2e_tests
+  script:
+    - pnpm cy:run:ci:firefox
+  only:
+    - develop
+    - main
+
+e2e-tests-auto-chrome-firefox:
+  <<: *e2e_tests
+  script:
+    - pnpm cy:run:ci:chrome:firefox
+  only:
+    - develop
+    - main
+
+e2e-tests-manual-chrome:
+  <<: *e2e_tests
+  script:
+    - pnpm cy:run:ci:chrome
+  except:
+    - develop
+    - main
+  when: manual
+
+e2e-tests-manual-chrome-mobile:
+  <<: *e2e_tests
+  script:
+    - pnpm cy:run:ci:chrome:mobile
+  except:
+    - develop
+    - main
+  when: manual
+
+e2e-tests-manual-firefox:
+  <<: *e2e_tests
+  script:
+    - pnpm cy:run:ci:firefox
+  except:
+    - develop
+    - main
+  when: manual
+
+e2e-tests-manual-firefox-mobile:
+  <<: *e2e_tests
+  script:
+    - pnpm cy:run:ci:firefox:mobile
+  except:
+    - develop
+    - main
+  when: manual
+
+e2e-tests-manual-safari:
+  <<: *e2e_tests
+  before_script:
+    - curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm@7
+    - pnpm config set store-dir .pnpm-store
+    - pnpm config set -- '//gitlab.com/api/v4/projects/38422864/packages/npm/:_authToken' "${CI_JOB_TOKEN}"
+    - pnpm install
+    - npx playwright install-deps
+  script:
+    - pnpm cy:run:ci:safari
+  except:
+    - develop
+    - main
+  when: manual
+
+e2e-tests-manual-safari-mobile:
+  <<: *e2e_tests
+  before_script:
+    - curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm@7
+    - pnpm config set store-dir .pnpm-store
+    - pnpm config set -- '//gitlab.com/api/v4/projects/38422864/packages/npm/:_authToken' "${CI_JOB_TOKEN}"
+    - pnpm install
+    - npx playwright install-deps
+  script:
+    - pnpm cy:run:ci:safari:mobile
+  except:
+    - develop
+    - main
+  when: manual
