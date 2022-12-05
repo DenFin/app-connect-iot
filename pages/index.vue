@@ -10,6 +10,8 @@
           <p>{{ $t('welcome') }}</p>
         </form>
       </div>
+      <p>TEST</p>
+
       <!-- <div v-if="session">
         Signed in as {{ session?.user?.email }} <br />
         <button @click="signOut()">Sign out</button>
@@ -20,12 +22,11 @@
       </div> -->
     </div>
   </template>
-  
+
   <script setup lang="ts">
   import { BegaLogo } from '@kernpunkt/bega-component-library'
-  
+
 //   const { data: session, signIn, signOut } = useSession()
-  definePageMeta({ auth: false })
+//   definePageMeta({ auth: false })
 
   </script>
-  

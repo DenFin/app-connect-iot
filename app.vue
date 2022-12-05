@@ -1,29 +1,49 @@
 <template>
-  <div class="m-4">
-    <BegaLogo icon="BegaConnectLogo" data-testid="connect-logo" />
+  <div class='m-4'>
+    <BegaLogo icon='BegaConnectLogo' data-testid='connect-logo' />
     <div>
       <form>
-        <select v-model="$i18n.locale">
-          <option value="en">en</option>
-          <option value="de">de</option>
+        <select v-model='$i18n.locale'>
+          <option value='en'>en</option>
+          <option value='de'>de</option>
         </select>
         <p>{{ $t('welcome') }}</p>
       </form>
     </div>
-    <!-- <div v-if="session">
-      Signed in as {{ session?.user?.email }} <br />
-      <button @click="signOut()">Sign out</button>
-    </div>
-    <div v-else>
-      Not signed in <br />
-      <button @click="signIn('begaid', { callbackUrl: '/dashboard' })">Sign in</button>
-    </div> -->
+    <br />
+    <h1>Auth Strategy:</h1>
+    <pre>Status: {{ status }}</pre>
+    <pre>Data: {{ data || 'no data present, are you logged in?' }}</pre>
+    <pre>Session: {{ session || 'no session data present, are you logged in?' }}</pre>
+    <pre>Last refreshed at: {{ lastRefreshedAt || 'no refresh happened' }}</pre>
+    <pre>Decoded JWT token: {{ token || 'no token present, are you logged in?' }}</pre>
+    <pre>CSRF Token: {{ csrfToken }}</pre>
+    <pre>Providers: {{ providers }}</pre>
+    <pre>ITS UserInfo Data: {{userInfoData}}</pre>
+    <pre>Discovery API Scenes: {{scenes}}</pre>
+    <p>The page content of "{{ route.path }}"</p>
+    <NuxtPage />
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang='ts'>
 import { BegaLogo } from '@kernpunkt/bega-component-library'
 
-// const { data: session, signIn, signOut } = useSession()
+const { data, status, lastRefreshedAt, getProviders, getCsrfToken, getSession } = useSession()
 
+const providers = await getProviders()
+const csrfToken = await getCsrfToken()
+const session = await getSession()
+
+const headers = useRequestHeaders(['cookie'])
+const { data: token } = await useFetch('/api/token', { headers: { cookie: headers.cookie || '' } })
+const { data: scenes } = await useFetch('/api/discovery/scenes', { headers: { cookie: headers.cookie || '' } })
+
+const userInfoData = await useFetch('https://aitlogin-stg.bega.com/connect/userinfo', {
+  headers: {
+    'Authorization': 'Bearer ' + token.value?.access_token,
+  },
+})
+
+const route = useRoute()
 </script>
