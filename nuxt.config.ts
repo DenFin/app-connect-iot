@@ -3,7 +3,14 @@ import en from './i18n/en.json'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n'],
+  runtimeConfig: {
+    BEGA_ID_ENDPOINT_BASE: process.env.BEGA_ID_ENDPOINT_BASE
+  },
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@sidebase/nuxt-auth'],
+  auth: {
+    enableGlobalAppMiddleware: true,
+    origin: 'http://localhost:3000'
+  },
   typescript: {
     typeCheck: true,
     strict: true,

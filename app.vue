@@ -10,9 +10,20 @@
         <p>{{ $t('welcome') }}</p>
       </form>
     </div>
+    <!-- <div v-if="session">
+      Signed in as {{ session?.user?.email }} <br />
+      <button @click="signOut()">Sign out</button>
+    </div>
+    <div v-else>
+      Not signed in <br />
+      <button @click="signIn('begaid', { callbackUrl: '/dashboard' })">Sign in</button>
+    </div> -->
   </div>
 </template>
 
 <script setup lang="ts">
 import { BegaLogo } from '@kernpunkt/bega-component-library'
+
+// const { data: session, signIn, signOut } = useSession()
+
 </script>
