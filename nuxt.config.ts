@@ -9,7 +9,8 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@sidebase/nuxt-auth'],
   auth: {
     enableGlobalAppMiddleware: true,
-    origin: 'http://localhost:3000'
+    origin: 'http://localhost:3000',
+    basePath: '/api/auth',
   },
   typescript: {
     typeCheck: true,
