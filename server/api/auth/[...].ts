@@ -46,7 +46,7 @@ export default NuxtAuthHandler({
       clientId: 'BegaConnectWebsiteOidc',
       clientSecret: 'foo-bar',
       type: 'oauth',
-      wellKnown: `${config.BEGA_ID_ENDPOINT_BASE}/.well-known/openid-configuration`,
+      wellKnown: `${config.public.BEGA_ID_ENDPOINT_BASE}/.well-known/openid-configuration`,
       userinfo: {
         async request(context){
           const accessToken: string = context.tokens.access_token || ''
@@ -56,7 +56,7 @@ export default NuxtAuthHandler({
       authorization: {
         params: {
           scope: 'BegaConnectService.Api email openid phone address profile',
-          // redirect_uri: 'http://localhost:3000/authenticated',
+          // redirect_uri: '/api/custom_callback',
           ui_culture: 'de-DE',
         }
       },
@@ -119,7 +119,7 @@ export default NuxtAuthHandler({
       name: 'BegaId',
       clientId: 'WebsiteOidc',
       type: 'oauth',
-      wellKnown: `${config.BEGA_ID_ENDPOINT_BASE}/.well-known/openid-configuration`,
+      wellKnown: `${config.public.BEGA_ID_ENDPOINT_BASE}/.well-known/openid-configuration`,
       authorization: {
         params: {
           scope: 'openid offline_access address profile phone email roles role-validation.Api Website.Api my-orders.api',

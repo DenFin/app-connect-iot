@@ -4,7 +4,23 @@ import en from './i18n/en.json'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   runtimeConfig: {
-    BEGA_ID_ENDPOINT_BASE: process.env.BEGA_ID_ENDPOINT_BASE
+    api: {
+      iot: {
+        endpoints: {
+          systems: `${process.env.CONNECT_IOT_API_BASE}/systems`,
+          // @ts-ignore
+          scenes: (systemId: string) => `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/scenes`,
+          // scenes: (systemId: string) => `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/scenes`,
+          // gears: (systemId: string) => { return `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/gears`},
+          // automations: (systemId: string) => { return `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/automations`},
+          // colors: (systemId: string) => { return `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/colors`}
+        }
+      },
+    },
+    CONNECT_IOT_API_BASE: process.env.CONNECT_IOT_API_BASE,
+    public: {
+      BEGA_ID_ENDPOINT_BASE: process.env.BEGA_ID_ENDPOINT_BASE
+    }
   },
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@sidebase/nuxt-auth'],
   auth: {

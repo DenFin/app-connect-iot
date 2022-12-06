@@ -20,6 +20,7 @@
     <pre>CSRF Token: {{ csrfToken }}</pre>
     <pre>Providers: {{ providers }}</pre>
     <pre>ITS UserInfo Data: {{userInfoData}}</pre>
+    <pre>Discovery API Systems: {{systems}}</pre>
     <pre>Discovery API Scenes: {{scenes}}</pre>
     <p>The page content of "{{ route.path }}"</p>
     <NuxtPage />
@@ -29,6 +30,7 @@
 
 <script setup lang='ts'>
 const { data, status, lastRefreshedAt, getProviders, getCsrfToken, getSession } = useSession()
+const config = useRuntimeConfig()
 
 const providers = await getProviders()
 const csrfToken = await getCsrfToken()
@@ -36,9 +38,10 @@ const session = await getSession()
 
 const headers = useRequestHeaders(['cookie'])
 const { data: token } = await useFetch('/api/token', { headers: { cookie: headers.cookie || '' } })
+const { data: systems } = await useFetch('/api/discovery/systems', { headers: { cookie: headers.cookie || '' } })
 const { data: scenes } = await useFetch('/api/discovery/scenes', { headers: { cookie: headers.cookie || '' } })
 
-const userInfoData = await useFetch('https://aitlogin-stg.bega.com/connect/userinfo', {
+const userInfoData = await useFetch(`${config.public.BEGA_ID_ENDPOINT_BASE}/connect/userinfo`, {
   headers: {
     'Authorization': 'Bearer ' + token.value?.access_token,
   },
