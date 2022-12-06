@@ -90,7 +90,7 @@ More to come soon. 🤞
 [![Pinia][pinia]][pinia-url]
 [![Gitlab][gitlab.com]][gitlab-url]
 [![Testing Library][testing-library.com]][testing-library-url]
-[![nuxt-auth][nuxt-auth]][nuxt-auth-url]
+[![nuxt-auth][nuxt-auth-badge]][nuxt-auth-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -222,6 +222,7 @@ If you have to implement a new feature-request or fix some bugs, please clone th
 [netlify-url]: https://netlify.com
 [nuxt.com]: https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82
 [nuxt-auth-url]: https://github.com/sidebase/nuxt-auth
+[nuxt-auth-badge]: https://img.shields.io/badge/nuxt--auth-4B3263?style=for-the-badge&logo=nuxt-dot-js&logoColor=white
 [nuxt-url]: https://nuxt.com/
 [pinia]: https://img.shields.io/badge/pinia-4B3263?style=for-the-badge&logo=pinia&logoColor=white
 [pinia-url]: pinia.vuejs.org/

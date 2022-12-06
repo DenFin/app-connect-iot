@@ -12,6 +12,9 @@ export default defineNuxtConfig({
     origin: 'http://localhost:3000',
     basePath: '/api/auth',
   },
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+  },
   typescript: {
     typeCheck: true,
     strict: true,
