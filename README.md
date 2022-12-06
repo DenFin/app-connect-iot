@@ -54,6 +54,7 @@
       <ul>
         <li><a href="#i18n">i18n</a></li>
         <li><a href="#cli-commands">CLI Commands</a></li>
+        <li><a href="#authentication-and-authorization">Authentication & authorization</a></li>
       </ul>
     </li>
     <li><a href="#contributing">Contributing</a></li>
@@ -89,6 +90,7 @@ More to come soon. 🤞
 [![Pinia][pinia]][pinia-url]
 [![Gitlab][gitlab.com]][gitlab-url]
 [![Testing Library][testing-library.com]][testing-library-url]
+[![nuxt-auth][nuxt-auth]][nuxt-auth-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -171,6 +173,11 @@ Usefule commands to run various tasks needed during development:
 - `pnpm test:coverage` - run the tests and generate a coverage report
 - `pnpm test:e2e` - run the end-to-end tests
 
+
+### Authentication and authorization
+We use [nuxt-auth](https://github.com/sidebase/nuxt-auth) for authentication and authorization. nuxt-auth uses next-auth under the hood. Learn more about [next-auth](https://next-auth.js.org).
+
+
 _For more examples, explanations and guidelines please refer to the [Documentation](#)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -214,6 +221,7 @@ If you have to implement a new feature-request or fix some bugs, please clone th
 [netlify.com]: https://img.shields.io/badge/netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white
 [netlify-url]: https://netlify.com
 [nuxt.com]: https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82
+[nuxt-auth-url]: https://github.com/sidebase/nuxt-auth
 [nuxt-url]: https://nuxt.com/
 [pinia]: https://img.shields.io/badge/pinia-4B3263?style=for-the-badge&logo=pinia&logoColor=white
 [pinia-url]: pinia.vuejs.org/
