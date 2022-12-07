@@ -1,34 +1,40 @@
 <template>
   <NuxtLayout>
-  <div class='m-4'>
-    <div>
-      <form>
-        <select v-model='$i18n.locale'>
-          <option value='en'>en</option>
-          <option value='de'>de</option>
-        </select>
-        <p>{{ $t('welcome') }}</p>
-      </form>
-    </div>
-    <br />
-    <h1>Auth Strategy:</h1>
-    <pre>Status: {{ status }}</pre>
-    <pre>Data: {{ data || 'no data present, are you logged in?' }}</pre>
-    <pre>Session: {{ session || 'no session data present, are you logged in?' }}</pre>
-    <pre>Last refreshed at: {{ lastRefreshedAt || 'no refresh happened' }}</pre>
-    <pre>Decoded JWT token: {{ token || 'no token present, are you logged in?' }}</pre>
-    <pre>CSRF Token: {{ csrfToken }}</pre>
-    <pre>Providers: {{ providers }}</pre>
-    <pre>ITS UserInfo Data: {{userInfoData}}</pre>
-    <pre>Discovery API Systems: {{systems}}</pre>
-    <pre>Discovery API Scenes: {{scenes}}</pre>
-    <p>The page content of "{{ route.path }}"</p>
+  <BegaContainer>
+    <div class='m-4'>
+      <div>
+        <form>
+          <select v-model='$i18n.locale'>
+            <option value='en'>en</option>
+            <option value='de'>de</option>
+          </select>
+          <p>{{ $t('welcome') }}</p>
+        </form>
+      </div>
+      <br />
+      <code>
+        <h1>Auth Strategy:</h1>
+        <pre>Status: {{ status }}</pre>
+        <pre>Data: {{ data || 'no data present, are you logged in?' }}</pre>
+        <pre>Session: {{ session || 'no session data present, are you logged in?' }}</pre>
+        <pre>Last refreshed at: {{ lastRefreshedAt || 'no refresh happened' }}</pre>
+        <pre>Decoded JWT token: {{ token || 'no token present, are you logged in?' }}</pre>
+        <pre>CSRF Token: {{ csrfToken }}</pre>
+        <pre>Providers: {{ providers }}</pre>
+        <pre>ITS UserInfo Data: {{userInfoData}}</pre>
+        <pre>Discovery API Systems: {{systems}}</pre>
+        <pre>Discovery API Scenes: {{scenes}}</pre>
+        <p>The page content of "{{ route.path }}"</p>s
+      </code>
+      </div>
+    </BegaContainer>
     <NuxtPage />
-  </div>
   </NuxtLayout>
 </template>
 
 <script setup lang='ts'>
+import { BegaContainer} from '@kernpunkt/bega-component-library'
+
 const { data, status, lastRefreshedAt, getProviders, getCsrfToken, getSession } = useSession()
 const config = useRuntimeConfig()
 
@@ -49,3 +55,13 @@ const userInfoData = await useFetch(`${config.public.BEGA_ID_ENDPOINT_BASE}/conn
 
 const route = useRoute()
 </script>
+
+<style>
+code {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 20px;
+  display: block;
+  overflow-x: scroll;
+}
+</style>
