@@ -27,6 +27,6 @@
   import { BegaLogo } from '@kernpunkt/bega-component-library'
 
 //   const { data: session, signIn, signOut } = useSession()
-//   definePageMeta({ auth: false })
+  definePageMeta({ auth: false })
 
   </script>

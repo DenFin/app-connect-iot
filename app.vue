@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-  <BegaContainer>
+  <BegaContainer data-testid='app-content'>
     <div class='m-4'>
       <div>
         <form>

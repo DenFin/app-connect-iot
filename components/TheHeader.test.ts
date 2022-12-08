@@ -1,9 +1,9 @@
 import {  describe, test, expect, vi } from 'vitest'
 import { render } from 'test/setup'
-import App from '~/app.vue'
+import App from '~/components/TheHeader.vue'
 
 describe('App', () => {
-  test('should render app content correctly', () => {
+  test('should render BEGA Connect logo correctly', () => {
     const { getByTestId, getByText } = render(App, {
       global: {
         mocks: {
@@ -16,7 +16,7 @@ describe('App', () => {
         }
       },
     })
-    expect(getByTestId('app-content')).toBeInTheDocument()
+    expect(getByTestId('connect-logo')).toBeInTheDocument()
     expect(getByText('translation-mock')).toBeTruthy()
   })
 })

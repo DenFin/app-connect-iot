@@ -6,6 +6,10 @@ declare namespace Cypress {
     getByTestId(
       dataTestAttribute: string,
       args?: any,
-    ): Chainable<JQuery<HTMLElement>>
+    ): Chainable<JQuery<HTMLElement>>,
+    getElementBySelector(
+      selector: string
+    )
+
   }
 }
