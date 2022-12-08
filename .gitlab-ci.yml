@@ -72,10 +72,10 @@ e2e-tests-auto-firefox:
     - develop
     - main
 
-e2e-tests-auto-chrome-firefox:
+e2e-tests-auto-firefox-mobile:
   <<: *e2e_tests
   script:
-    - pnpm cy:run:ci:chrome:firefox
+    - pnpm cy:run:ci:firefox:mobile
   only:
     - develop
     - main
