@@ -9,7 +9,7 @@
             <BegaIcon class='fill-white w-4 h-4 cursor-pointer hover:stroke-white' icon='UserareaIcon' />
           </div>
           <BegaButton v-if="!isEmptyObject(session)" @click="signOut()" icon='LogoutIcon' data-testid='btn-logout-header' class='border-primary border text-primary hover:bg-primary hover:text-white hover:opacity-100 font-light' text='Abmelden'  />
-          <BegaButton v-else @click="signIn('begaid', { callbackUrl: '/dashboard' })" data-testid='btn-login-header'  icon='LogoutIcon' class='border-primary border text-primary hover:bg-primary hover:text-white hover:opacity-100 font-light' text='Anmelden'  />
+          <BegaButton v-else @click="signIn('bega', { callbackUrl: '/dashboard' })" data-testid='btn-login-header'  icon='LogoutIcon' class='border-primary border text-primary hover:bg-primary hover:text-white hover:opacity-100 font-light' text='Anmelden'  />
         </div>
       </div>
     </BegaContainer>

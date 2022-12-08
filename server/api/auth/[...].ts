@@ -82,38 +82,6 @@ export default NuxtAuthHandler({
       },
 
     },
-    // @ts-ignore Import is exported on .default during SSR, so we need to call it this way. May be fixed via Vite at some point
-    GithubProvider.default({
-      clientId: 'your-client-id',
-      clientSecret: 'your-client-secret'
-    }),
-    // @ts-ignore Import is exported on .default during SSR, so we need to call it this way. May be fixed via Vite at some point
-    {
-      id: 'example',
-      name: 'Example',
-      type: 'oauth',
-      wellKnown: 'https://samples.auth0.com/.well-known/openid-configuration',
-      clientId: 'kbyuFDidLLm280LIwVFiazOqjO3ty8KH',
-      clientSecret: '60Op4HFM0I8ajz0WdiStAbziZ-VFQttXuxixHHs2R7r7-CW8GR79l-mmLqMhc-Sa',
-      idToken: true,
-      authorization: { params: { scope: 'openid profile email phone address'}},
-      profile(profile: BegaUserInfo) {
-        return {
-          id: profile.sub,
-          name: profile.given_name,
-          email: profile.email,
-        }
-      },
-      style: {
-        logo: "https://raw.githubusercontent.com/nextauthjs/next-auth/main/packages/next-auth/provider-logos/github.svg",
-        logoDark:
-          "https://raw.githubusercontent.com/nextauthjs/next-auth/main/packages/next-auth/provider-logos/github-dark.svg",
-        bg: "#fff",
-        bgDark: "#000",
-        text: "#000",
-        textDark: "#fff",
-      },
-    },
     {
       id: 'begaid',
       name: 'BegaId',
