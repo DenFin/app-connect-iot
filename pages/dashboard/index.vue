@@ -15,6 +15,7 @@
     <code>
       <h1>Auth Strategy:</h1>
       <pre>Status: {{ status }}</pre>
+      <pre>Data: {{ data || 'no session data present, are you logged in?' }}</pre>
       <pre>Session: {{ session || 'no session data present, are you logged in?' }}</pre>
       <pre>Last refreshed at: {{ lastRefreshedAt || 'no refresh happened' }}</pre>
       <pre>Decoded JWT token: {{ token || 'no token present, are you logged in?' }}</pre>
@@ -33,7 +34,7 @@ import { BegaContainer } from '@kernpunkt/bega-component-library'
 
 definePageMeta({ auth: false })
 
-const { status, signIn, signOut, lastRefreshedAt, getProviders, getCsrfToken, getSession } = useSession()
+const { data, status, signIn, signOut, lastRefreshedAt, getProviders, getCsrfToken, getSession } = useSession()
 const config = useRuntimeConfig()
 
 const providers = await getProviders()

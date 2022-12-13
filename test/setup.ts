@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { expect, afterEach, vi } from 'vitest'
 import { cleanup, render, RenderOptions, RenderResult } from '@testing-library/vue'
+import { asyncRender, asyncCleanup } from './render'
 
 import matchers, {
   TestingLibraryMatchers,
@@ -26,7 +27,25 @@ afterEach(() => {
 
 expect.extend(matchers)
 
-const customRender = (component: any, options?: RenderOptions): RenderResult => {
+const customAsyncRender = async (component: any, options?: RenderOptions): Promise<RenderResult> => {
+  const mergedOptions = {
+    global: {
+      mocks: {
+        $t: (message: string) => message,
+        $i18n: {
+          locale: vi.fn(),
+        },
+        ...options?.global?.mocks
+      },
+      ...options?.global
+    },
+    ...options
+  }
+  // @ts-ignore
+  return asyncRender(component, mergedOptions)
+}
+
+const customRender = async (component: any, options?: RenderOptions): Promise<RenderResult> => {
   const mergedOptions = {
     global: {
       mocks: {
@@ -46,5 +65,5 @@ const customRender = (component: any, options?: RenderOptions): RenderResult => 
 }
 
 export * from '@testing-library/vue'
-export { customRender as render }
+export { customRender as render, customAsyncRender as asyncRender, asyncCleanup}
 

@@ -3,12 +3,12 @@ import { render } from 'test/setup'
 import App from '~/app.vue'
 
 describe('App', () => {
-  test('should render app content correctly', () => {
-    const { getByTestId, getByText } = render(App, {
+  test('should render app content correctly', async () => {
+    const { getByTestId, getByText } = await render(App, {
       global: {
         mocks: {
           $t: vi.fn().mockImplementation(() => {
-            return 'translation-mock'
+            return 'locale-translation-mock'
           }),
           $i18n: {
             locale: vi.fn()
@@ -17,6 +17,6 @@ describe('App', () => {
       },
     })
     expect(getByTestId('app-content')).toBeInTheDocument()
-    expect(getByText('translation-mock')).toBeTruthy()
+    expect(getByText('locale-translation-mock')).toBeTruthy()
   })
 })

@@ -1,37 +1,38 @@
-import { describe, test, expect, vi } from 'vitest'
-import { render } from 'test/setup'
-import App from '~/components/TheHeader.vue'
+import { describe, test, expect, vi, beforeEach } from 'vitest'
+import TheHeader from '~/components/TheHeader.vue'
+import { asyncCleanup, asyncRender } from '~/test/setup'
 
 vi.mock('#imports', () => ({
   useI18n() {
     return {
-      t: vi.fn(),
+      t: (message: string) => message,
     }
   },
   useSession() {
     return {
-      getSession: vi.fn(() => Promise.resolve({})),
+      getSession: mockSession,
       signIn: vi.fn(),
       signOut: vi.fn(),
     }
   },
 }))
 
+let mockSession = vi.fn(() => Promise.resolve({}))
+
 describe('App', () => {
-  test('should render BEGA Connect logo correctly', () => {
-    const { getByTestId, getByText } = render(App, {
-      global: {
-        mocks: {
-          $t: vi.fn().mockImplementation(() => {
-            return 'translation-mock'
-          }),
-          $i18n: {
-            locale: vi.fn(),
-          },
-        },
-      },
-    })
+  beforeEach(asyncCleanup)
+
+  test('should render BEGA Connect logo correctly', async () => {
+    const { getByTestId, getByText } = await asyncRender(TheHeader)
     expect(getByTestId('connect-logo')).toBeInTheDocument()
-    expect(getByText('translation-mock')).toBeTruthy()
+    expect(getByText('signIn')).toBeTruthy()
+  })
+
+  test('should render logout button is user is logged in', async () => {
+    mockSession = vi.fn(() => Promise.resolve({ user: { name: 'Chuck'}}))
+    const { getByTestId, getByText } = await asyncRender(TheHeader)
+    expect(getByTestId('connect-logo')).toBeInTheDocument()
+    expect(getByText('welcome Chuck')).toBeTruthy()
+    expect(getByText('signOut')).toBeTruthy()
   })
 })
