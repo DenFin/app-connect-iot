@@ -1,24 +1,24 @@
 import { describe, test, expect, vi } from 'vitest'
-import * as nuxtAuth from '@sidebase/nuxt-auth'
-import * as i18n from '@nuxtjs/i18n'
 import { render } from 'test/setup'
 import App from '~/components/TheHeader.vue'
 
-vi.mock('@sidebase/nuxt-auth')
-vi.mock('@nuxtjs/i18n')
-describe('App', () => {
-  test('should render BEGA Connect logo correctly', () => {
-
-    (nuxtAuth as any).useSession = vi.fn().mockReturnValue({
+vi.mock('#imports', () => ({
+  useI18n() {
+    return {
+      t: vi.fn(),
+    }
+  },
+  useSession() {
+    return {
+      getSession: vi.fn(() => Promise.resolve({})),
       signIn: vi.fn(),
       signOut: vi.fn(),
-      getSession: vi.fn().mockReturnValue({ user: { name: 'TestUser'}})
-    })
+    }
+  },
+}))
 
-    (i18n as any).useI18n = vi.fn().mockReturnValue({
-      t: vi.fn().mockReturnValue('mock-translation'),
-    })
-
+describe('App', () => {
+  test('should render BEGA Connect logo correctly', () => {
     const { getByTestId, getByText } = render(App, {
       global: {
         mocks: {
