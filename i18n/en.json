@@ -1,5 +1,7 @@
 {
   "welcome": "Welcome",
-  "signIn": "SignIn",
-  "signOut": "SignOut"
+  "my-systems": "My locations",
+  "sign-in": "Sign in",
+  "signed-in-as": "Signed in as",
+  "sign-out": "Log out"
 }

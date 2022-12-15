@@ -1,5 +1,7 @@
 {
   "welcome": "Willkommen",
-  "signIn": "Anmelden",
-  "signOut": "Abmelden"
+  "my-systems": "Meine Standorte",
+  "sign-in": "Anmelden",
+  "signed-in-as": "Angemeldet als",
+  "sign-out": "Abmelden"
 }

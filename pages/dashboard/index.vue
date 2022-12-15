@@ -2,20 +2,20 @@
   <BegaContainer is-centered>
     <div class='m-4'>
       <div v-if='session'>
-        Signed in as {{ session?.user?.email }} <br />
-        <button @click='signOut()'>Sign out</button>
+        <BegaHeadline type='h1' :text="$t('my-systems')" />
+        {{ $t('signed-in-as') }} {{ session?.user?.email }} <br />
+        <button @click='signOut()'>{{ $t('sign-out')}}</button>
       </div>
       <div v-else>
         Not signed in <br />
         <!-- die callbackUrl hier zu überschreiben geht nicht... falscher spread operartor glaube ich, https://github.com/sidebase/nuxt-auth/blob/main/src/runtime/composables/useSession.ts#L118 -->
-        <button @click="signIn('bega', { callbackUrl: '/dashboard', redirect: true })">Sign in</button>
+        <button @click="signIn('bega', { callbackUrl: '/dashboard', redirect: true })">{{  $t('sign-out') }}</button>
       </div>
     </div>
 
     <code>
       <h1>Auth Strategy:</h1>
       <pre>Status: {{ status }}</pre>
-      <pre>Data: {{ data || 'no session data present, are you logged in?' }}</pre>
       <pre>Session: {{ session || 'no session data present, are you logged in?' }}</pre>
       <pre>Last refreshed at: {{ lastRefreshedAt || 'no refresh happened' }}</pre>
       <pre>Decoded JWT token: {{ token || 'no token present, are you logged in?' }}</pre>
@@ -30,11 +30,11 @@
 </template>
 
 <script setup lang='ts'>
-import { BegaContainer } from '@kernpunkt/bega-component-library'
+import { BegaContainer, BegaHeadline } from '@kernpunkt/bega-component-library'
 
 definePageMeta({ auth: false })
 
-const { data, status, signIn, signOut, lastRefreshedAt, getProviders, getCsrfToken, getSession } = useSession()
+const { status, signIn, signOut, lastRefreshedAt, getProviders, getCsrfToken, getSession } = useSession()
 const config = useRuntimeConfig()
 
 const providers = await getProviders()

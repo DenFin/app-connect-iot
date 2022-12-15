@@ -1,12 +1,14 @@
 <template>
-  <div class='m-4'>
-    <BegaLogo icon='BegaConnectLogo' data-testid='connect-logo' />
-    <h1>Welcome to BEGA Connect</h1>
-  </div>
-</template>
+    <div class="m-4">
+      <BegaContainer>
+        <BegaHeadline type='h1' text='Startseite' />
+        <p>Keine Anmeldung erforderlich</p>
+      </BegaContainer>
+    </div>
+  </template>
 
-<script setup lang='ts'>
-import { BegaLogo } from '@kernpunkt/bega-component-library'
+  <script setup lang="ts">
+  import { BegaContainer, BegaHeadline } from '@kernpunkt/bega-component-library'
 
-definePageMeta({ auth: false })
-</script>
+  definePageMeta({ auth: false })
+  </script>
