@@ -3,8 +3,8 @@ import { render } from 'test/setup'
 import App from '~/app.vue'
 
 describe('App', () => {
-  test('should render app content correctly', async () => {
-    const { getByTestId, getByText } = await render(App, {
+  test('should render app content correctly', () => {
+    const { getByTestId, getByText } = render(App, {
       global: {
         mocks: {
           $t: vi.fn().mockImplementation(() => {

@@ -7,6 +7,10 @@ const extractSessionTokenFromCookie = async (event: any) => {
   return await getToken({ event })
 }
 
+/**
+ * Collect all systems related to this user token
+ * @param accessToken of the user
+ */
 const getSystems = async (accessToken: string) => {
   try {
     return await $fetch(`${config.api.iot.endpoints.systems}`, {

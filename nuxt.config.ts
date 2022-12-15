@@ -17,6 +17,11 @@ export default defineNuxtConfig({
         }
       },
     },
+    server: {
+      api: {
+        logout: process.env.AUTH_LOGOUT
+      }
+    },
     CONNECT_IOT_API_BASE: process.env.CONNECT_IOT_API_BASE,
     public: {
       BEGA_ID_ENDPOINT_BASE: process.env.BEGA_ID_ENDPOINT_BASE

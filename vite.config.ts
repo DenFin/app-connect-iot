@@ -25,6 +25,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '~': path.resolve(__dirname),
+      // resolve nuxt auto imports to be able to mock them in tests
       '#imports': path.resolve(__dirname, './.nuxt/imports.d.ts'),
     },
   },

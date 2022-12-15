@@ -27,6 +27,9 @@ afterEach(() => {
 
 expect.extend(matchers)
 
+/**
+ * Enrich the asyncRender() function from VTL with custom properties to mock the i18n module provided global functions
+ */
 const customAsyncRender = async (component: any, options?: RenderOptions): Promise<RenderResult> => {
   const mergedOptions = {
     global: {
@@ -45,13 +48,14 @@ const customAsyncRender = async (component: any, options?: RenderOptions): Promi
   return asyncRender(component, mergedOptions)
 }
 
-const customRender = async (component: any, options?: RenderOptions): Promise<RenderResult> => {
+/**
+ * Enrich the render() function from VTL with custom properties to mock the i18n module provided global functions
+ */
+const customRender = (component: any, options?: RenderOptions): RenderResult => {
   const mergedOptions = {
     global: {
       mocks: {
-        $t: vi.fn().mockImplementation(() => {
-          return 'improve-this-not-to-have-everywhere-the-same-mock-value'
-        }),
+        $t: (message: string) => message,
         $i18n: {
           locale: vi.fn(),
         },

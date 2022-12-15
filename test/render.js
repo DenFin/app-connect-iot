@@ -4,6 +4,17 @@ import { getQueriesForElement, prettyDOM } from '@testing-library/dom'
 
 const mountedWrappers = new Set()
 
+/**
+ * This function is a fork from the origin render() function inside the VTL package
+ * @link https://github.com/testing-library/vue-testing-library/blob/main/src/render.js
+ *
+ * We have to fork it to support async components / async setup hooks which needs to be wrapped in a
+ * <suspense> tag.
+ * @link https://vuejs.org/guide/built-ins/suspense.html#async-dependencies}
+ *
+ * If you use this asyncRender function don't forget to use the asyncCleanup as well otherwise the document will not be
+ * cleared correctly
+ */
 async function render(
   Component,
   {
@@ -70,6 +81,10 @@ function cleanupAtWrapper(wrapper) {
   mountedWrappers.delete(wrapper)
 }
 
+/**
+ * Wraps a component with a <suspense> and flush all promises
+ * @link https://github.com/vuejs/test-utils/issues/108#issuecomment-1124851726
+ */
 async function mountWithSuspense(component, options) {
   const wrapper = defineComponent({
     'components': { [component.name]: component },

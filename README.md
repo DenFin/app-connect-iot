@@ -126,12 +126,19 @@ This project requires the following tools to be installed:
    ```sh
    pnpm install
    ```
+3. Add .env file to root
+   ```
+   BEGA_ID_ENDPOINT_BASE=https://login.bega.com
+   CONNECT_IOT_API_BASE=https://discovery-backend.prod.bega.grandcentrix.dev/v1
+   AUTH_LOGOUT=http://localhost:3000/logout
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Testing
+#### Mocking global functions
 In order to be able to mock the i18n module and its global methods like $t, we have to write our own render() function to overwrite the default of @testing-library/vue.
-This is done in tests/setup.ts and should be imported as follows:  
+This is done in tests/setup.ts and instead of using the TVL import inside the components you should import it from the setup path:  
 ```
 // old
 import { render } from '@testing-library/vue'
@@ -139,6 +146,68 @@ import { render } from '@testing-library/vue'
 // new
 import { render} from 'test/setup'
 ```
+If you want to overwrite those default mocks, this can be done as follows:
+```
+const { getByTestId, getByText } = await render(App, {
+  global: {
+    mocks: {
+      $t: vi.fn().mockImplementation(() => {
+        return 'context-translation-mock'
+      }),
+      $i18n: {
+        locale: vi.fn()
+      }
+    }
+  },
+})
+```
+
+#### Mocking auto imported components/composables from third party applications
+However, vite/vitest is not aware of the auto imported stuff provided by vue3
+That's why some auto imported e.g. composables doesn't exist on test runs.
+
+To provide those autoimports to the testing as well and for that to be mockable too.
+Adapt the vite.config.ts
+```
+  resolve: {
+    alias: {
+      // resolve nuxt auto imports to be able to mock them in tests
+      '#imports': path.resolve(__dirname, './.nuxt/imports.d.ts'),
+    },
+  }
+```
+Unfortunately you now have to import everything on your own in the component. But on the other hand, now it's possible to mock
+these components/packages like e.g.:
+```
+vi.mock('#imports', () => ({
+  useI18n() {
+    return {
+      t: (message: string) => message,
+    }
+  },
+  useSession() {
+    return {
+      getSession: mockSession,
+      signIn: vi.fn(),
+    }
+  },
+}))
+```
+
+#### async Setup/Component testing with VTL in NUXT3
+The current version of the vue-testing-library (VTL) doesn't support of rendering async components. 
+There is a discussion about this inside the GitHub Repository ([Entry Point](https://github.com/testing-library/vue-testing-library/issues/176)) with 
+peer dependency to vue-test-utils ([Issue](https://github.com/vuejs/test-utils/issues/108#issuecomment-1124851726))
+
+Until this is not finally implemented inside VTL we have to "fork" the render function on our own to provide the suspense wrapper.
+This happens inside ./test/render.js
+
+It's on the writer of the units tests to decide if je needs the render or asyncRender function. 
+But be aware when you use the asyncRender function, you also have to call the asyncCleanUp in your tests as well inside a 
+```
+  afterEach(asyncCleanup)
+```
+The Cleanup of the non-async render function is implemented as default in the ./tests/setup.ts 
 
 <!-- USAGE EXAMPLES -->
 
