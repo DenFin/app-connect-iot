@@ -41,7 +41,7 @@ export default NuxtAuthHandler({
     },
   },
   // secret which is used to encrypt/decrypt the session cookie
-  secret: '17fef57d-e50b-4429-b077-97165df6cc73',
+  secret: config.NEXTAUTH_JWT_SECRET,
   providers: [
     // https://github.com/nextauthjs/next-auth/discussions/4164
     {

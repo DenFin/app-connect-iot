@@ -1,7 +1,7 @@
 <template>
   <BegaContainer is-centered>
     <div class='m-4'>
-      <div v-if='session'>
+      <div v-if="!isEmptyObject(session)">
         <BegaHeadline type='h1' :text="$t('my-systems')" />
         {{ $t('signed-in-as') }} {{ session?.user?.email }} <br />
         <button @click='signOut()'>{{ $t('sign-out')}}</button>
@@ -9,10 +9,9 @@
       <div v-else>
         Not signed in <br />
         <!-- die callbackUrl hier zu überschreiben geht nicht... falscher spread operartor glaube ich, https://github.com/sidebase/nuxt-auth/blob/main/src/runtime/composables/useSession.ts#L118 -->
-        <button @click="signIn('bega', { callbackUrl: '/dashboard', redirect: true })">{{  $t('sign-out') }}</button>
+        <button @click="signIn('bega', { callbackUrl: '/dashboard', redirect: true })">{{  $t('sign-in') }}</button>
       </div>
     </div>
-
     <code>
       <h1>Auth Strategy:</h1>
       <pre>Status: {{ status }}</pre>
@@ -31,6 +30,7 @@
 
 <script setup lang='ts'>
 import { BegaContainer, BegaHeadline } from '@kernpunkt/bega-component-library'
+import { isEmptyObject } from '~/utils/objectHelpers'
 
 definePageMeta({ auth: false })
 

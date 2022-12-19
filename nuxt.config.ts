@@ -23,6 +23,7 @@ export default defineNuxtConfig({
       }
     },
     CONNECT_IOT_API_BASE: process.env.CONNECT_IOT_API_BASE,
+    NEXTAUTH_JWT_SECRET: process.env.NEXTAUTH_JWT_SECRET,
     public: {
       BEGA_ID_ENDPOINT_BASE: process.env.BEGA_ID_ENDPOINT_BASE
     }

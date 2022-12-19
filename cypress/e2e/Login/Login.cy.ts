@@ -1,4 +1,5 @@
-import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor'
+import { Given, Then } from '@badeball/cypress-cucumber-preprocessor'
+import userObj from './../../fixtures/session.json'
 
 
 /**
@@ -24,20 +25,18 @@ Then('the page does not display greeting with the user\'s name', () => {
 /**
  * Scenario Outline: Anonymous user starts login process
  */
-Given('Anonymous user is on the landing page', () => {
-  cy.visit('/');
+Given('User is logged in', () => {
+  cy.login(userObj);
+  cy.visit('/dashboard');
 })
 
-When('Anonymous user triggers the login via click', () => {
-  // cy.getByTestId('btn-login-header').trigger('click')
-  cy.getByTestId('btn-login-header').click({ force: true })
+Then('the page displays a greeting with the user\'s name', () => {
+  cy.getByTestId('welcome-message').should('exist')
+})
+Then('the page displays a log out button', () => {
+  cy.getByTestId('btn-logout-header').should('exist')
 })
 
-Then('the page redirects to BEGA ID login page', () => {
-  cy.url({ timeout: 15_000 }).should('be.equals', 'https://login.bega.com/login')
-})
-
-Then('login form is visible on BEGA ID login page', () => {
-  // quatsch
-  cy.getByTestId('welcome-message').should('not.exist')
+Then('the page does not display a log in button', () => {
+  cy.getByTestId('btn-login-header').should('not.exist')
 })
