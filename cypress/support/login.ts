@@ -1,35 +1,11 @@
-
-/// <reference path="../support/index.d.ts" />
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
 import hkdf from "@panva/hkdf";
 import { EncryptJWT, JWTPayload } from "jose";
 
-// Function logic derived from https://github.com/nextauthjs/next-auth/blob/5c1826a8d1f8d8c2d26959d12375704b0a693bfc/packages/next-auth/src/jwt/index.ts#L113-L121
+/**
+ * Function logic derived from
+ * @link https://github.com/nextauthjs/next-auth/blob/5c1826a8d1f8d8c2d26959d12375704b0a693bfc/packages/next-auth/src/jwt/index.ts#L113-L121
+ * @param secret used to encrypt
+ */
 async function getDerivedEncryptionKey(secret: string) {
   return await hkdf(
     "sha256",
@@ -40,7 +16,13 @@ async function getDerivedEncryptionKey(secret: string) {
   );
 }
 
-// Function logic derived from https://github.com/nextauthjs/next-auth/blob/5c1826a8d1f8d8c2d26959d12375704b0a693bfc/packages/next-auth/src/jwt/index.ts#L16-L25
+/**
+ * Function logic derived from
+ * @link https://github.com/nextauthjs/next-auth/blob/5c1826a8d1f8d8c2d26959d12375704b0a693bfc/packages/next-auth/src/jwt/index.ts#L16-L25
+ *
+ * @param token as payload of the encrypted JWT
+ * @param secret used to enrcypt
+ */
 export async function encode(
   token: JWTPayload,
   secret: string

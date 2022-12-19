@@ -1,7 +1,7 @@
 {
-  "name": "Dennis",
-  "email": "dennis.fink@kernpunkt.de",
+  "name": "Max",
+  "email": "Max.Mustermann@kernpunkt.de",
   "sub": "1e4d5a33-ea66-4e56-dbb3-08d9fb813e0f",
-  "access_token": "1234",
-  "id_token": "1234"
+  "access_token": "stubbed-access-token",
+  "id_token": "stubbed-id-token"
 }

@@ -6,7 +6,7 @@ import userObj from './../../fixtures/session.json'
  * Scenario: Anonymous user visits landing page
  */
 Given('Anonymous User is on the landing page', () => {
-  cy.visit('/');
+  cy.visit('/')
 })
 
 Then('the page displays login button in the header', () => {
@@ -26,8 +26,8 @@ Then('the page does not display greeting with the user\'s name', () => {
  * Scenario Outline: Anonymous user starts login process
  */
 Given('User is logged in', () => {
-  cy.login(userObj);
-  cy.visit('/dashboard');
+  cy.customLogin(userObj)
+  cy.visit('/dashboard')
 })
 
 Then('the page displays a greeting with the user\'s name', () => {

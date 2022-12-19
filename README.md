@@ -131,6 +131,7 @@ This project requires the following tools to be installed:
    BEGA_ID_ENDPOINT_BASE=https://login.bega.com
    CONNECT_IOT_API_BASE=https://discovery-backend.prod.bega.grandcentrix.dev/v1
    AUTH_LOGOUT=http://localhost:3000/logout
+   NEXTAUTH_JWT_SECRET=17fef57d-xxxx-xxxx-b077-97165df6cc73
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
