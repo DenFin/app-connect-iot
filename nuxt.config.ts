@@ -9,29 +9,34 @@ export default defineNuxtConfig({
         endpoints: {
           systems: `${process.env.CONNECT_IOT_API_BASE}/systems`,
           // @ts-ignore
-          scenes: (systemId: string) => `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/scenes`,
+          scenes: (systemId: string) =>
+            `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/scenes`,
           // scenes: (systemId: string) => `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/scenes`,
           // gears: (systemId: string) => { return `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/gears`},
           // automations: (systemId: string) => { return `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/automations`},
           // colors: (systemId: string) => { return `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/colors`}
-        }
+        },
       },
     },
     server: {
       api: {
-        logout: process.env.AUTH_LOGOUT
-      }
+        logout: process.env.AUTH_LOGOUT,
+      },
     },
     CONNECT_IOT_API_BASE: process.env.CONNECT_IOT_API_BASE,
     NEXTAUTH_JWT_SECRET: process.env.NEXTAUTH_JWT_SECRET,
     public: {
-      BEGA_ID_ENDPOINT_BASE: process.env.BEGA_ID_ENDPOINT_BASE
-    }
+      BEGA_ID_ENDPOINT_BASE: process.env.BEGA_ID_ENDPOINT_BASE,
+    },
   },
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/i18n', '@sidebase/nuxt-auth'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    '@nuxtjs/i18n',
+    '@sidebase/nuxt-auth',
+  ],
   auth: {
     enableGlobalAppMiddleware: true,
-    origin: 'http://localhost:3000',
     basePath: '/api/auth',
   },
   tailwindcss: {

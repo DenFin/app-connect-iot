@@ -3,6 +3,7 @@ image: node:18
 stages:
   - analyse
   - test
+  - deploy
 
 eslint:
   stage: analyse
@@ -145,3 +146,57 @@ e2e-tests-manual-safari-mobile:
     - develop
     - main
   when: manual
+
+deploy-to-azure-dev:
+  stage: deploy
+  image: docker:stable
+  tags:
+    - docker
+  services:
+    - name: docker:dind
+      alias: thedockerhost
+  variables:
+    DOCKER_HOST: tcp://thedockerhost:2375/
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ''
+  before_script:
+    - docker login -u "$AZURE_REGISTRY_USER" -p "$AZURE_REGISTRY_PASSWORD" $AZURE_REGISTRY
+  script:
+    - docker build --build-arg BASE_URL=${BASE_URL} --build-arg BEGA_ID_ENDPOINT_BASE=${BEGA_ID_ENDPOINT_BASE} --build-arg CONNECT_IOT_API_BASE=${CONNECT_IOT_API_BASE} --build-arg NEXTAUTH_JWT_SECRET=${NEXTAUTH_JWT_SECRET} --build-arg NPM_TOKEN=${NPM_TOKEN} --pull -t "$AZURE_REGISTRY/begaconnect:develop" .
+    - docker push "$AZURE_REGISTRY/begaconnect:develop"
+
+deploy-to-azure-stage:
+  stage: deploy
+  image: docker:stable
+  tags:
+    - docker
+  services:
+    - name: docker:dind
+      alias: thedockerhost
+  variables:
+    DOCKER_HOST: tcp://thedockerhost:2375/
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ''
+  before_script:
+    - docker login -u "$AZURE_REGISTRY_USER" -p "$AZURE_REGISTRY_PASSWORD" $AZURE_REGISTRY
+  script:
+    - docker build --build-arg BASE_URL=${BASE_URL} --build-arg BEGA_ID_ENDPOINT_BASE=${BEGA_ID_ENDPOINT_BASE} --build-arg CONNECT_IOT_API_BASE=${CONNECT_IOT_API_BASE} --build-arg NEXTAUTH_JWT_SECRET=${NEXTAUTH_JWT_SECRET} --build-arg NPM_TOKEN=${NPM_TOKEN} --pull -t "$AZURE_REGISTRY/begaconnect:stage" .
+    - docker push "$AZURE_REGISTRY/begaconnect:stage"
+
+deploy-to-azure-prod:
+  stage: deploy
+  image: docker:stable
+  tags:
+    - docker
+  services:
+    - name: docker:dind
+      alias: thedockerhost
+  variables:
+    DOCKER_HOST: tcp://thedockerhost:2375/
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ''
+  before_script:
+    - docker login -u "$AZURE_REGISTRY_USER" -p "$AZURE_REGISTRY_PASSWORD" $AZURE_REGISTRY
+  script:
+    - docker build --build-arg BASE_URL=${BASE_URL} --build-arg BEGA_ID_ENDPOINT_BASE=${BEGA_ID_ENDPOINT_BASE} --build-arg CONNECT_IOT_API_BASE=${CONNECT_IOT_API_BASE} --build-arg NEXTAUTH_JWT_SECRET=${NEXTAUTH_JWT_SECRET} --build-arg NPM_TOKEN=${NPM_TOKEN} --pull -t "$AZURE_REGISTRY/begaconnect:stable" .
+    - docker push "$AZURE_REGISTRY/begaconnect:stable"
