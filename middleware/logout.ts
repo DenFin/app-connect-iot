@@ -5,9 +5,9 @@ export default defineNuxtRouteMiddleware(async (to) => {
   console.log('target', to)
   const { signOut } = useSession()
   try {
-    await signOut({ callbackUrl: '/dashboard', redirect: false})
+    await signOut({ callbackUrl: '/', redirect: false})
   } catch (error) {
     console.log(error)
   }
-  return '/dashboard'
+  return '/'
 })

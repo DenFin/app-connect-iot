@@ -1,0 +1,99 @@
+h1 {
+  @apply text-5xl leading-9 mb-5;
+}
+
+h2 {
+  font-weight: 200;
+  @apply text-3xl leading-7 mb-5;
+}
+
+h3 {
+  @apply text-xl leading-6 font-semibold mb-4;
+}
+
+h4 {
+  @apply text-lg leading-5 font-semibold mb-4;
+}
+
+h5 {
+  @apply leading-4 text-tiny font-semibold mb-3;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  hyphens: auto;
+}
+
+p{
+  @apply mb-2 text-sm leading-2;
+}
+
+
+body {
+  @apply font-extralight leading-normal text-primary break-words;
+}
+
+.caption {
+  @apply mb-2 text-xs leading-1;
+}
+
+@screen xl {
+  h1 {
+    @apply text-7xl leading-12 mb-6;
+  }
+
+  h2{
+    @apply text-6xl leading-11 mb-6;
+  }
+
+  h3 {
+    @apply text-4xl leading-10 mb-5;
+  }
+
+  h4 {
+    @apply text-2xl leading-5;
+  }
+
+  h5 {
+    @apply text-base leading-5 mb-4;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    hyphens: manual;
+  }
+
+  p {
+    @apply mb-2 text-sm leading-3;
+  }
+
+  body {
+    @apply text-sm font-extralight leading-normal;
+  }
+
+  .caption {
+    @apply mb-2 text-xs leading-1;
+  }
+}
+
+.hyphens {
+  hyphens: manual;
+  -webkit-hyphens: manual;
+  -moz-hyphens: manual;
+  -ms-hyphens: manual;
+}
+
+*::selection {
+  background: #ff9f0a;
+  color: #1e1e1e
+}
+
+.text-primary::selection,
+.text-primary span::selection
+{
+  background: rgba(0,0,0,0.125);
+}

@@ -1,0 +1,29 @@
+{
+  "total": 2,
+  "items": [
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "name": "Special light setup",
+      "trigger": {
+        "type": "TIME",
+        "weekdays": [
+          0,
+          6
+        ],
+        "time": "13:37:00"
+      },
+      "command": {
+        "scene_id": "55b4ed08-ba7e-49d5-9690-156d2f35242e"
+      },
+      "pending_state": "IDLE",
+      "provisioning_complete": true,
+      "provisioning_states": [
+        {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "name": "Test KGC",
+          "completed": true
+        }
+      ]
+    }
+  ]
+}

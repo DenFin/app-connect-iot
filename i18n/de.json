@@ -3,5 +3,10 @@
   "my-systems": "Meine Standorte",
   "sign-in": "Anmelden",
   "signed-in-as": "Angemeldet als",
-  "sign-out": "Abmelden"
+  "sign-out": "Abmelden",
+  "system-welcome-text": "Willkommen zurück! In dieser Übersicht finden Sie alle Ihre Standorte mit dazugehörigen Informationen und Bearbeitungsmöglichkeiten.",
+  "google-maps-location": "Schau dir den Standort auf Google Maps an.",
+  "more-information":"Mehr Informationen",
+  "available":"Verfügbar",
+  "lamps":"Leuchten"
 }

@@ -1,0 +1,139 @@
+{
+  "systems": {
+    "total": 2,
+    "items": [
+      {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "name": "Kurpark und Soletherme Bad Sassendorf",
+        "timezone": "Europe/Berlin",
+        "location": {
+          "longitude": 0.4567865,
+          "latitude": 0.87656789,
+          "address": "Rosenweg 20, 12345 Berlin"
+        },
+        "connectors_count": 3,
+        "connectors": [
+          {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "code": "891004234814455936F",
+            "name": "Test KGC",
+            "firmware_version": "0.5.7-dev",
+            "serial_number": "string",
+            "bus_state": "DALI_STATE_OK",
+            "connected": true,
+            "timezone": "Europe/Berlin",
+            "location": {
+              "longitude": 0.4567865,
+              "latitude": 0.87656789,
+              "address": "Rosenweg 20, 12345 Berlin"
+            },
+            "signal_strength": -70,
+            "gears_count": 8,
+            "pending_state": "IDLE",
+            "product_type": "AIR"
+          }
+        ],
+        "location_provisioning_complete": true,
+        "location_provisioning_states": [
+          {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "name": "Test KGC",
+            "completed": true
+          }
+        ],
+        "can_join_systems": true,
+        "pending_state": "IDLE",
+        "product_type": "SYSTEM",
+        "url": "berlin"
+      },
+      {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa5",
+        "name": "Schloss Neuschwanstein\nSchwangau",
+        "timezone": "Europe/Berlin",
+        "location": {
+          "longitude": 0.4567865,
+          "latitude": 0.87656789,
+          "address": "Rosenweg 20, 12345 Berlin"
+        },
+        "connectors_count": 3,
+        "connectors": [
+          {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "code": "891004234814455936F",
+            "name": "Test KGC",
+            "firmware_version": "0.5.7-dev",
+            "serial_number": "string",
+            "bus_state": "DALI_STATE_OK",
+            "connected": true,
+            "timezone": "Europe/Berlin",
+            "location": {
+              "longitude": 0.4567865,
+              "latitude": 0.87656789,
+              "address": "Rosenweg 20, 12345 Berlin"
+            },
+            "signal_strength": -70,
+            "gears_count": 8,
+            "pending_state": "IDLE",
+            "product_type": "AIR"
+          }
+        ],
+        "location_provisioning_complete": false,
+        "location_provisioning_states": [
+          {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "name": "Test KGC",
+            "completed": true
+          }
+        ],
+        "can_join_systems": true,
+        "pending_state": "IDLE",
+        "product_type": "AIR",
+        "url": "neuschwanstein"
+      },
+      {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa4",
+        "name": "Orangeriegarten Stift Melk",
+        "timezone": "Europe/Berlin",
+        "location": {
+          "longitude": 0.4567865,
+          "latitude": 0.87656789,
+          "address": "Rosenweg 20, 12345 Berlin"
+        },
+        "connectors_count": 3,
+        "connectors": [
+          {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "code": "891004234814455936F",
+            "name": "Test KGC",
+            "firmware_version": "0.5.7-dev",
+            "serial_number": "string",
+            "bus_state": "DALI_STATE_OK",
+            "connected": true,
+            "timezone": "Europe/Berlin",
+            "location": {
+              "longitude": 0.4567865,
+              "latitude": 0.87656789,
+              "address": "Rosenweg 20, 12345 Berlin"
+            },
+            "signal_strength": -70,
+            "gears_count": 8,
+            "pending_state": "IDLE",
+            "product_type": "AIR"
+          }
+        ],
+        "location_provisioning_complete": false,
+        "location_provisioning_states": [
+          {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "name": "Test KGC",
+            "completed": true
+          }
+        ],
+        "can_join_systems": true,
+        "pending_state": "IDLE",
+        "product_type": "SYSTEM",
+        "url": "villa"
+      }
+    ]
+  }
+}

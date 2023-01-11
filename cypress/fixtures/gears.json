@@ -1,0 +1,169 @@
+{
+  "total": 1,
+  "items": [
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa1",
+      "name": "Front Light",
+      "model": "BEGA Strahler B14F",
+      "model_number": "12345-123-4",
+      "serial_number": "069TK923",
+      "features": {
+        "colorable": true,
+        "separable_channels": true,
+        "supported_channels": [
+          "RED"
+        ],
+        "dimmable": true,
+        "tunable": true,
+        "temperature_min": 2700,
+        "temperature_max": 5600
+      },
+      "reachable": true,
+      "level": 115,
+      "temperature": 10,
+      "color": {
+        "r": 100,
+        "g": 200,
+        "b": 255
+      },
+      "channels": {
+        "r": 100,
+        "g": 200,
+        "b": 23,
+        "w": 198,
+        "a": 55,
+        "f": 202
+      },
+      "pending_state": "IDLE",
+      "address": 64864,
+      "short_address": 0,
+      "connector_product_type": "AIR",
+      "connector": {
+        "name": "string"
+      }
+    },
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa2",
+      "name": "Front Light",
+      "model": "Wandeinbauleuchten",
+      "model_number": "12345-123-4",
+      "serial_number": "string",
+      "features": {
+        "colorable": true,
+        "separable_channels": true,
+        "supported_channels": [
+          "RED"
+        ],
+        "dimmable": true,
+        "tunable": true,
+        "temperature_min": 2700,
+        "temperature_max": 5600
+      },
+      "reachable": true,
+      "level": 115,
+      "temperature": 10,
+      "color": {
+        "r": 100,
+        "g": 200,
+        "b": 255
+      },
+      "channels": {
+        "r": 100,
+        "g": 200,
+        "b": 23,
+        "w": 198,
+        "a": 55,
+        "f": 202
+      },
+      "pending_state": "IDLE",
+      "address": 64864,
+      "short_address": 0,
+      "connector_product_type": "AIR",
+      "connector": {
+        "name": "string"
+      }
+    },
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa3",
+      "name": "Front Light",
+      "model": "BEGA Strahler B14F",
+      "model_number": "12345-123-4",
+      "serial_number": "string",
+      "features": {
+        "colorable": true,
+        "separable_channels": true,
+        "supported_channels": [
+          "RED"
+        ],
+        "dimmable": true,
+        "tunable": true,
+        "temperature_min": 2700,
+        "temperature_max": 5600
+      },
+      "reachable": true,
+      "level": 115,
+      "temperature": 10,
+      "color": {
+        "r": 100,
+        "g": 200,
+        "b": 255
+      },
+      "channels": {
+        "r": 100,
+        "g": 200,
+        "b": 23,
+        "w": 198,
+        "a": 55,
+        "f": 202
+      },
+      "pending_state": "IDLE",
+      "address": 64864,
+      "short_address": 0,
+      "connector_product_type": "AIR",
+      "connector": {
+        "name": "string"
+      }
+    },
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa4",
+      "name": "Front Light",
+      "model": "BEGA Strahler B14F",
+      "model_number": "12345-123-4",
+      "serial_number": "string",
+      "features": {
+        "colorable": true,
+        "separable_channels": true,
+        "supported_channels": [
+          "RED"
+        ],
+        "dimmable": true,
+        "tunable": true,
+        "temperature_min": 2700,
+        "temperature_max": 5600
+      },
+      "reachable": true,
+      "level": 115,
+      "temperature": 10,
+      "color": {
+        "r": 100,
+        "g": 200,
+        "b": 255
+      },
+      "channels": {
+        "r": 100,
+        "g": 200,
+        "b": 23,
+        "w": 198,
+        "a": 55,
+        "f": 202
+      },
+      "pending_state": "IDLE",
+      "address": 64864,
+      "short_address": 0,
+      "connector_product_type": "AIR",
+      "connector": {
+        "name": "string"
+      }
+    }
+  ]
+}

@@ -1,5 +1,9 @@
 @import "@kernpunkt/bega-component-library/style";
 
+@import "./base.css";
+
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+@import "../fonts/fonts.css";

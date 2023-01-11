@@ -1,9 +1,9 @@
 <template>
-  <header class='min-h-12 flex items-center bg-black'>
+  <header class='min-h-12 flex items-center sticky top-0 bg-secondary w-full z-50'>
     <BegaContainer is-centered is-extended>
       <div class='flex justify-between'>
         <BegaLogo
-          to='/dashboard'
+          :to="!isEmptyObject(session)? '/my-systems' : '/'"
           icon='BegaConnectLogo'
           icon-classes='w-36'
           data-testid='connect-logo'
@@ -11,8 +11,8 @@
           :has-dark-background='true'
         />
         <div class='flex items-center'>
-          <div v-if='!isEmptyObject(session)' class='mr-12 flex items-center'>
-            <p data-testid='welcome-message' class='mr-3 text-white'>
+          <div v-if='!isEmptyObject(session)' class='md:mr-12 flex items-center'>
+            <p data-testid='welcome-message' class='mr-3 mt-2 text-white hidden md:block'>
               {{ welcomeMessage }}
             </p>
             <BegaIcon
@@ -24,7 +24,7 @@
             v-if='!isEmptyObject(session)'
             icon='LogoutIcon'
             data-testid='btn-logout-header'
-            class='border-primary text-primary hover:bg-primary border font-light hover:text-white hover:opacity-100'
+            class='bg-secondary  hidden md:block p-2 border-primary text-primary hover:bg-primary border font-light hover:text-white hover:opacity-100'
             :text="$t('sign-out')"
             @click='federateSignOut()'
           />
@@ -32,9 +32,9 @@
             v-else
             data-testid='btn-login-header'
             icon='LogoutIcon'
-            class='border-primary text-primary hover:bg-primary border font-light hover:text-white hover:opacity-100'
+            class='bg-secondary hidden md:block p-2 border-primary text-primary hover:bg-primary border font-light hover:text-white hover:opacity-100'
             :text="$t('sign-in')"
-            @click="signIn('bega', { callbackUrl: '/dashboard' })"
+            @click="signIn('bega', { callbackUrl: '/my-systems' })"
           />
         </div>
       </div>
@@ -78,6 +78,7 @@ const isType = computed<ConcreteComponent | string>(() => {
 async function federateSignOut(): Promise<void> {
   const headers = useRequestHeaders(['cookie'])
   const { data: logoutUrl } = await useFetch('/api/auth/logout', { headers: { cookie: headers.cookie || '' } })
+  console.log(logoutUrl?.value)
   window.location.replace(logoutUrl?.value || '/')
 }
 </script>

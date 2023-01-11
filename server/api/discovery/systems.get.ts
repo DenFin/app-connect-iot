@@ -24,6 +24,7 @@ const getSystems = async (accessToken: string) => {
       },
     })
   } catch (error) {
+    console.log(error)
     return error
   }
 }

@@ -1,0 +1,349 @@
+{
+    "items": [
+        {
+            "gears": [
+                {
+                    "gear_id": "d05b64be-3e33-419c-ada7-5f22ebab6ac2",
+                    "pending_state": "IDLE",
+                    "level": 0,
+                    "temperature": null,
+                    "color": {
+                      "r": 100,
+                      "g": 200,
+                      "b": 255
+                    },
+                    "channels": null
+                },
+                {
+                    "gear_id": "a0033d7e-7294-4abc-a8b5-6716ec869b8b",
+                    "pending_state": "IDLE",
+                    "level": 0,
+                    "temperature": null,
+                    "color": {
+                      "r": 100,
+                      "g": 200,
+                      "b": 255
+                    },
+                    "channels": null
+                },
+                {
+                    "gear_id": "b343b541-fcb8-49ea-b568-86d226cfeaec",
+                    "pending_state": "IDLE",
+                    "level": 0,
+                    "temperature": null,
+                    "color": {
+                      "r": 255,
+                      "g": 0,
+                      "b": 0
+                    },
+                    "channels": null
+                },
+                {
+                    "gear_id": "47ea76df-8787-46ab-b42a-0974c46b22ae",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "78c2701c-5276-47b6-9575-ee12bc130127",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "21791899-1c42-4398-af1f-5a2b289cd82f",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": {
+                      "r": 100,
+                      "g": 200,
+                      "b": 255
+                    },
+                    "channels": null
+                },
+                {
+                    "gear_id": "505f2863-d7b2-4c39-945c-b1043ce0e6bb",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "daf132cf-8d75-415b-810c-bce4ad0dfe77",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "859814e7-1d9f-457e-ae2d-bf159b8021c8",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "7f881079-0e05-4e82-b5b0-2d02275f7078",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "e669d144-2072-485c-974e-86f599d2e139",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "cfb8c7af-f1bc-4f50-a2cc-6695b1fdbc84",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "268190b7-65a9-4053-9c2c-c1bfc9ccb915",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "e1911425-70be-4027-9491-27ee4f9eb60d",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "2f7d5922-3dfb-47a8-9298-7f6d67294ea4",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "e4684528-bde9-4f58-bd6e-04f111669257",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "34d07810-d1f4-4bb2-89a8-92ddedf633b5",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "dceaf802-7cc1-4aa5-928c-8e19c5e951f5",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "06e4ec02-1fdf-44f0-9762-89f185dcfc9a",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "35febf3d-4729-4e4a-bb64-7ba6fc1b3d69",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "9965ad6f-7819-41f9-b4f8-27d44a41552e",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "55b84814-8f10-4a2d-85cf-62afe797fc8b",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "a9ada8bf-0f6a-45a9-b7f3-99888b1a4986",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "cf1cf467-3d55-4518-b01f-2e2bce62cba1",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "88edbe49-f22c-4d1d-ba03-f1795f3dd8ba",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "35d95ffb-dbb3-4461-acea-2b881528a409",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "80dca39b-ddfd-4fbc-b188-50b4a86d6457",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "9ee948d5-76be-43b4-9b56-1116cae86b24",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "888c7dec-4989-49ff-88b3-ac15cb9aea38",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "c544a720-f7c4-4c70-b74c-7cea2ece87e6",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "61f9b29e-14ee-4864-acb0-8b0f48a072c4",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                },
+                {
+                    "gear_id": "70bbe00b-1d52-4b3b-8c7c-f6381e27f021",
+                    "pending_state": "IDLE",
+                    "level": 254,
+                    "temperature": null,
+                    "color": null,
+                    "channels": null
+                }
+            ],
+            "id": "55b4ed08-ba7e-49d5-9690-156d2f35242e",
+            "name": "Straßenleuchte"
+        },
+        {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "name": "Szene2",
+          "gears": [
+            {
+              "gear_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+              "level": 254,
+              "temperature": 10,
+              "color": {
+                "r": 100,
+                "g": 200,
+                "b": 255
+              },
+              "channels": {
+                "r": 100,
+                "g": 200,
+                "b": 23,
+                "w": 198,
+                "a": 55,
+                "f": 202
+              },
+              "pending_state": "IDLE",
+              "_gear": {
+                "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                "name": "Front Light",
+                "model": "BEGA Strahler B14F",
+                "model_number": "12345-123-4",
+                "serial_number": "string",
+                "features": {
+                  "colorable": true,
+                  "separable_channels": true,
+                  "supported_channels": [
+                    "RED"
+                  ],
+                  "dimmable": true,
+                  "tunable": true,
+                  "temperature_min": 2700,
+                  "temperature_max": 5600
+                },
+                "reachable": true,
+                "level": 115,
+                "temperature": 10,
+                "color": {
+                  "r": 100,
+                  "g": 200,
+                  "b": 255
+                },
+                "channels": {
+                  "r": 100,
+                  "g": 200,
+                  "b": 23,
+                  "w": 198,
+                  "a": 55,
+                  "f": 202
+                },
+                "pending_state": "IDLE",
+                "address": 64864,
+                "short_address": 0,
+                "connector_product_type": "AIR",
+                "connector": {
+                  "name": "string"
+                }
+              }
+            }
+          ]
+        }
+    ],
+    "total": 2
+}

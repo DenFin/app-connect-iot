@@ -1,0 +1,33 @@
+{
+  "items": [
+    {
+      "id": "3443507a-9c7e-4973-11f7-08d9dcb338da",
+      "email": "peter.busch@kernpunkt.de"
+    },
+    {
+      "id": "dab58d2a-0886-4b3f-bb0e-e94121c77d6a",
+      "email": "aaron.seggelke@kernpunkt.de"
+    },
+    {
+      "id": "01b14582-30a5-418c-c380-08da074bd2a7",
+      "email": "dennis.fink@kernpunkt.de"
+    },
+    {
+      "id": "319db900-0682-4a9c-a3cd-a7886563bab7",
+      "email": "lorenz.diener@kernpunkt.de"
+    },
+    {
+      "id": "904d8e64-d07a-43f1-9bf6-8d665c71fbb0",
+      "email": "maikel.rehl@grandcentrix.net"
+    },
+    {
+      "id": "be640f07-c004-44e7-ad27-3419d863de6e",
+      "email": "spam-bega1@snod.net"
+    },
+    {
+      "id": "bf925071-36ef-44bb-b7b1-08d9ebacd9fb",
+      "email": "test-user-gcx5@bega.com"
+    }
+  ],
+  "total": 7
+}

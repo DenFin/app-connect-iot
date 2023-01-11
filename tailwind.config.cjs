@@ -1,9 +1,37 @@
 module.exports = {
-  content: ['./src/**/*.{vue,js,ts}'],
+  content: [
+    './index.html',
+    './node_modules/@kernpunkt/bega-component-library/dist/**/*.js',
+    './src/**/*.{vue,js,ts}'
+  ],
   theme: {
     extend: {
       colors: {
         primary: '#ff9f0a',
+        secondary: '#1E1E1E',
+        current: 'currentColor',
+      },
+      lineHeight: {
+        rem: '1rem', // 16px
+        1: '1.3125rem', //  21px
+        2: '1.5rem', //     24px
+        3: '1.75rem', //    28px
+        4: '1.90625rem', // 30,5px
+        5: '2.125rem', //   34px
+        6: '2.59375rem', // 41,5px
+        7: '2.84375rem', // 45.5px
+        8: '3rem', //       48px
+        9: '3.3125rem', //  53px
+        10: '3.625rem', //  58px
+        11: '4.1875rem', // 67px
+        12: '5.125rem', //  82px
+        none: '1',
+        tight: '1.25',
+        snug: '1.375',
+        normal: '1.5',
+        relaxed: '1.625',
+        loose: '2',
+        initial: 'initial',
       },
       spacing: {
         0: '0',

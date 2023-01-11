@@ -3,5 +3,10 @@
   "my-systems": "My locations",
   "sign-in": "Sign in",
   "signed-in-as": "Signed in as",
-  "sign-out": "Log out"
+  "sign-out": "Log out",
+  "system-welcome-text": "Welcome back! In this overview you will find all your locations with the associated information and editing options.",
+  "google-maps-location":"Check the location on Google Maps",
+  "more-information":"More information",
+  "available":"available",
+  "lamps":"lamps"
 }
