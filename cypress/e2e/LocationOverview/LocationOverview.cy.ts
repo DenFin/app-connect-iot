@@ -6,7 +6,7 @@ import userObj from "~/cypress/fixtures/session.json";
  */
 Given('User is on systems overview', () => {
   cy.customLogin(userObj)
-  cy.visit('/my-systems')
+  cy.visit('/systems')
 })
 Then('the page displays an intro text', function () {
   cy.getByTestId('intro-text').should('exist')

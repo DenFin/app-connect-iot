@@ -24,7 +24,7 @@
 <script setup lang='ts'>
 import {BegaHeadline} from '@kernpunkt/bega-component-library'
 
-const { status, signOut, lastRefreshedAt, getProviders, getCsrfToken, getSession } = useSession()
+const {status, signOut, lastRefreshedAt, getProviders, getCsrfToken, getSession} = useSession()
 const config = useRuntimeConfig()
 
 const providers = await getProviders()

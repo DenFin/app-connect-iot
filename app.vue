@@ -1,13 +1,12 @@
 <template>
   <NuxtLayout>
-    <BegaContainer is-centered  data-testid='app-content'>
+    <BegaContainer is-centered data-testid='app-content'>
       <div v-if="!isEmptyObject(session)">
         <NuxtPage/>
       </div>
       <div v-else>
         Not signed in <br/>
-        <!-- die callbackUrl hier zu überschreiben geht nicht... falscher spread operartor glaube ich, https://github.com/sidebase/nuxt-auth/blob/main/src/runtime/composables/useSession.ts#L118 -->
-        <button @click="signIn('bega', { callbackUrl: '/my-systems', redirect: true })">{{ $t('sign-in') }}</button>
+        <button @click="signIn('bega', { callbackUrl: '/systems', redirect: true })">{{ $t('sign-in') }}</button>
       </div>
       <div class='p-4'>
         <div>
@@ -20,8 +19,8 @@
           </form>
         </div>
         <div>
-          <BegaButton class="" @click="store.changeDataInput()" :text="store.isTestData? 'Use Api': 'Use Testdata'"/>
-          <span>{{store.isTestData}}</span>
+          <BegaButton :text="store.isTestData? 'Use Api': 'Use Testdata'" @click="store.changeDataInput()"/>
+          <span>{{ store.isTestData }}</span>
         </div>
       </div>
     </BegaContainer>

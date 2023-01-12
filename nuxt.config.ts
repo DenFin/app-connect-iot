@@ -9,8 +9,7 @@ export default defineNuxtConfig({
         endpoints: {
           systems: `${process.env.CONNECT_IOT_API_BASE}/systems`,
           // @ts-ignore
-          // scenes: (systemId: string) => `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/scenes`,
-          // @ts-ignore
+          scenes: (systemId: string) => `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/scenes`,
           // gears: (systemId: string) => `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/gears`,
           // automations: (systemId: string) => { return `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/automations`},
           // colors: (systemId: string) => { return `${process.env.CONNECT_IOT_API_BASE}/systems/${systemId}/colors`}

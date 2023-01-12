@@ -3,7 +3,7 @@
     <BegaContainer is-centered is-extended>
       <div class='flex justify-between'>
         <BegaLogo
-          :to="!isEmptyObject(session)? '/my-systems' : '/'"
+          :to="!isEmptyObject(session)? '/systems' : '/'"
           icon='BegaConnectLogo'
           icon-classes='w-36'
           data-testid='connect-logo'
@@ -34,7 +34,7 @@
             icon='LogoutIcon'
             class='bg-secondary hidden md:block p-2 border-primary text-primary hover:bg-primary border font-light hover:text-white hover:opacity-100'
             :text="$t('sign-in')"
-            @click="signIn('bega', { callbackUrl: '/my-systems' })"
+            @click="signIn('bega', { callbackUrl: '/systems' })"
           />
         </div>
       </div>
@@ -78,7 +78,6 @@ const isType = computed<ConcreteComponent | string>(() => {
 async function federateSignOut(): Promise<void> {
   const headers = useRequestHeaders(['cookie'])
   const { data: logoutUrl } = await useFetch('/api/auth/logout', { headers: { cookie: headers.cookie || '' } })
-  console.log(logoutUrl?.value)
   window.location.replace(logoutUrl?.value || '/')
 }
 </script>
