@@ -1,6 +1,6 @@
 import {Given, Then, When} from "@badeball/cypress-cucumber-preprocessor";
 import userObj from "~/cypress/fixtures/session.json";
-
+import jsonData from '~/cypress/fixtures/systems.json'
 /**
  * Scenario: Anonymous user visits the system overview
  */
@@ -12,7 +12,7 @@ Then('the page displays an intro text', function () {
   cy.getByTestId('intro-text').should('exist')
 });
 Then('the page displays the users systems as cards', function () {
-  cy.intercept('GET', '/api/discovery/systems', { fixture: 'systems.json' })
+  cy.task('mockServer', { interceptUrl: `/api/discovery/systems`, fixture: jsonData })
   cy.getByTestId('system-card').should('exist')
   cy.getByTestId('system-google-maps-link').should('exist')
 });
