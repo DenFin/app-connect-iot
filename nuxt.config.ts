@@ -51,6 +51,21 @@ export default defineNuxtConfig({
         de,
         en,
       },
+      pluralizationRules: {
+        'en': (choice) => {
+          if (choice === 0) return 1
+          if (choice > 1) return 1
+          if (choice === 1) return 0
+          return 1
+        },
+        'de': (choice) => {
+          console.log('tralala', choice)
+          if (choice === 0) return 1
+          if (choice > 1) return 1
+          if (choice === 1) return 0
+          return 1
+        }
+      },
     },
   },
 })

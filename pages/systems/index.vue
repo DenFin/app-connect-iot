@@ -25,7 +25,9 @@
             <BegaButtonATag
               class="border-primary mt-6 border shadow-none hover:shadow-none" :is-primary="false"
               text-classes="font-semibold" show-arrow
-              :text="$t('more-information')"/>
+              :text="$t('more-information')"
+              :link="`/systems/${system.id}`"
+              :type="isType" />
           </template>
         </BegaCard>
       </div>
@@ -34,6 +36,7 @@
 </template>
 
 <script setup lang='ts'>
+import { ConcreteComponent } from 'vue'
 import {BegaHeadline, BegaLink, BegaButtonATag} from '@kernpunkt/bega-component-library'
 import testSystems from '~/cypress/fixtures/systems.json'
 // TODO: Entfernen wenn nicht mehr benötigt und aus template ausbauen
@@ -46,4 +49,7 @@ const {data: systems} = await useFetch('/api/discovery/systems', {headers: {cook
 function getMapsLink(lat: number, long: number) {
   return encodeURI(`https://www.google.com/maps/search/?api=1&query=${lat},${long}`)
 }
+const isType = computed<ConcreteComponent | string>(() => {
+  return resolveComponent('nuxt-link')
+})
 </script>

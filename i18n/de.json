@@ -8,5 +8,18 @@
   "google-maps-location": "Schau dir den Standort auf Google Maps an.",
   "more-information":"Mehr Informationen",
   "available":"Verfügbar",
-  "luminaire":"Leuchten"
+  "luminaire":"Leuchten",
+  "go-to-my-systems": "Zurück zu den Standortdetails",
+  "my-systems-config": "Standort Einstellungen",
+  "all-lights-on": "Alle Leuchten an",
+  "all-lights-off": "Alle Leuchten aus",
+  "device": "Gerät | Geräte",
+  "no-device": "Für Ihre Standort stehen keine Geräte zur verfügung",
+  "user": "Nutzer | Nutzer",
+  "automation": "Automation | Automationen",
+  "sensor": "Sensor | Sensoren",
+  "connector": "Connector | Connectoren",
+  "to-device-list": "Zur Geräteliste",
+  "control-users": "Nutzer verwalten",
+  "control-users-text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
 }

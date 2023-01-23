@@ -1,7 +1,7 @@
 <template>
   <div data-testid="system-card" class="h-full rounded bg-white p-8 text-black">
     <slot name="preHeadline"/>
-    <BegaHeadline class="leading-3 xl:leading-5" type="h4" :text="props.title"/>
+    <BegaHeadline v-if='props.title' class="leading-3 xl:leading-5" type="h4" :text="props.title"/>
     <slot name="content"/>
   </div>
 </template>

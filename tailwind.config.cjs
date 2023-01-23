@@ -96,6 +96,7 @@ module.exports = {
       },
       minHeight: {
         12: '72px',
+        50: '300px',
       },
     }
   }
