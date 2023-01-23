@@ -29,6 +29,7 @@
 
 <script setup lang='ts'>
 import {BegaContainer, BegaButton} from '@kernpunkt/bega-component-library'
+import { useSession } from '#imports'
 import {isEmptyObject} from '~/utils/objectHelpers'
 import {useTestStore} from "~/store/test.store";
 
