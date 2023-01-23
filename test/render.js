@@ -1,6 +1,6 @@
-import { defineComponent } from 'vue'
-import { mount, flushPromises } from '@vue/test-utils'
-import { getQueriesForElement, prettyDOM } from '@testing-library/dom'
+import {defineComponent} from 'vue'
+import {mount, flushPromises} from '@vue/test-utils'
+import {getQueriesForElement, prettyDOM} from '@testing-library/dom'
 
 const mountedWrappers = new Set()
 
@@ -87,11 +87,11 @@ function cleanupAtWrapper(wrapper) {
  */
 async function mountWithSuspense(component, options) {
   const wrapper = defineComponent({
-    'components': { [component.name]: component },
+    'components': {[component.name]: component},
     'props': Object.keys(options.props ?? {}),
     'template': `
       <suspense>
-      <${component.name} v-bind='$props' />
+      <${component.name} v-bind='$props'/>
       </suspense>`,
   })
 
@@ -100,4 +100,4 @@ async function mountWithSuspense(component, options) {
   return result
 }
 
-export { render as asyncRender, cleanup as asyncCleanup }
+export {render as asyncRender, cleanup as asyncCleanup}

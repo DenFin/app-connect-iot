@@ -22,7 +22,7 @@ let mockSession = vi.fn(() => Promise.resolve({}))
 
 describe('App', () => {
   test('should render app content correctly', async () => {
-    mockSession = vi.fn(() => Promise.resolve({ user: { name: 'Chuck'}}))
+    mockSession = vi.fn(() => Promise.resolve({user: {name: 'Chuck'}}))
     const {getByTestId, getByText} = await asyncRender(App, {
       global: {
         plugins: [

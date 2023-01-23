@@ -1,11 +1,11 @@
-import { getToken } from '#auth'
+import {getToken} from '#auth'
 
 const extractSessionTokenFromCookie = async (event: any) => {
-  return await getToken({ event })
+  return await getToken({event})
 }
 
 const getScenes = async (accessToken: string) => {
-  await console.log(accessToken.substring(1,5))
+  await console.log(accessToken.substring(1, 5))
   return 'nothing to see'
 }
 
@@ -16,5 +16,5 @@ export default eventHandler(async event => {
     scenes = await getScenes(sessionToken.access_token)
   }
 
-  return { scenes }
+  return {scenes}
 })

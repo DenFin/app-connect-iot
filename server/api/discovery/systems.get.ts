@@ -1,10 +1,10 @@
-import { getToken } from '#auth'
+import {getToken} from '#auth'
 
 const config = useRuntimeConfig()
 
 
 const extractSessionTokenFromCookie = async (event: any) => {
-  return await getToken({ event })
+  return await getToken({event})
 }
 
 /**
@@ -30,11 +30,11 @@ const getSystems = async (accessToken: string) => {
 }
 
 export default eventHandler(async event => {
-  let systems: string | any  = 'missing-token-to-call-discovery-api'
+  let systems: string | any = 'missing-token-to-call-discovery-api'
   const sessionToken = await extractSessionTokenFromCookie(event)
   if (sessionToken && sessionToken.access_token) {
     systems = await getSystems(sessionToken.access_token)
   }
 
-  return { systems }
+  return {systems}
 })

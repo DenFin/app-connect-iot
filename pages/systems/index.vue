@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="md:flex gap-5">
+    <div class="gap-5 md:flex">
       <BegaHeadline type='h1' class="mb-2" :text="$t('my-systems')"/>
       <span
-        class="align-middle xl:text-4xl text-2xl font-thin xl:pt-5 md:pt-3 opacity-70">{{
+        class="align-middle text-2xl font-thin opacity-70 md:pt-3 xl:pt-5 xl:text-4xl">{{
           store.isTestData ? testSystems.systems.items.length : systems?.systems?.items?.length
         }} {{ $t('available') }}</span>
     </div>
-    <div class="md:w-2/3 mt-4 md:mt-0" data-testid="intro-text">{{ $t('system-welcome-text') }}</div>
-    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mt-12">
+    <div class="mt-4 md:mt-0 md:w-2/3" data-testid="intro-text">{{ $t('system-welcome-text') }}</div>
+    <div class="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
       <div v-for="system in store.isTestData ? testSystems.systems.items : systems?.systems?.items" :key="system.id">
         <BegaCard :title="system?.name">
           <template #preHeadline>
@@ -16,14 +16,16 @@
           </template>
           <template #content>
             <div v-if="system?.location?.address" class="mb-6">{{ system.location.address }}</div>
-            <BegaLink data-testid="system-google-maps-link" v-if="system?.location?.address"
-                      link-color="text-secondary"
-                      :to="getMapsLink(system.location.latitude,system.location.longitude)"
-                      icon="MarkerIcon" target="_blank"
-                      :text="$t('google-maps-location')"/>
-            <BegaButtonATag class="mt-6 shadow-none hover:shadow-none border border-primary" :is-primary="false"
-                            text-classes="font-semibold" show-arrow
-                            :text="$t('more-information')"/>
+            <BegaLink
+              v-if="system?.location?.address" data-testid="system-google-maps-link"
+              link-color="text-secondary"
+              :to="getMapsLink(system.location.latitude,system.location.longitude)"
+              icon="MarkerIcon" target="_blank"
+              :text="$t('google-maps-location')"/>
+            <BegaButtonATag
+              class="border-primary mt-6 border shadow-none hover:shadow-none" :is-primary="false"
+              text-classes="font-semibold" show-arrow
+              :text="$t('more-information')"/>
           </template>
         </BegaCard>
       </div>

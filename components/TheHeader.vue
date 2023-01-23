@@ -1,5 +1,5 @@
 <template>
-  <header class='min-h-12 flex items-center sticky top-0 bg-secondary w-full z-50'>
+  <header class='min-h-12 bg-secondary sticky top-0 z-50 flex w-full items-center'>
     <BegaContainer is-centered is-extended>
       <div class='flex justify-between'>
         <BegaLogo
@@ -11,8 +11,8 @@
           :has-dark-background='true'
         />
         <div class='flex items-center'>
-          <div v-if='!isEmptyObject(session)' class='md:mr-12 flex items-center'>
-            <p data-testid='welcome-message' class='mr-3 mt-2 text-white hidden md:block'>
+          <div v-if='!isEmptyObject(session)' class='flex items-center md:mr-12'>
+            <p data-testid='welcome-message' class='mr-3 mt-2 hidden text-white md:block'>
               {{ welcomeMessage }}
             </p>
             <BegaIcon
@@ -24,7 +24,7 @@
             v-if='!isEmptyObject(session)'
             icon='LogoutIcon'
             data-testid='btn-logout-header'
-            class='bg-secondary  hidden md:block p-2 border-primary text-primary hover:bg-primary border font-light hover:text-white hover:opacity-100'
+            class='bg-secondary  border-primary text-primary hover:bg-primary hidden border p-2 font-light hover:text-white hover:opacity-100 md:block'
             :text="$t('sign-out')"
             @click='federateSignOut()'
           />
@@ -32,7 +32,7 @@
             v-else
             data-testid='btn-login-header'
             icon='LogoutIcon'
-            class='bg-secondary hidden md:block p-2 border-primary text-primary hover:bg-primary border font-light hover:text-white hover:opacity-100'
+            class='bg-secondary border-primary text-primary hover:bg-primary hidden border p-2 font-light hover:text-white hover:opacity-100 md:block'
             :text="$t('sign-in')"
             @click="signIn('bega', { callbackUrl: '/systems' })"
           />
@@ -49,14 +49,14 @@ import {
   BegaIcon,
   BegaLogo,
 } from '@kernpunkt/bega-component-library'
-import { ConcreteComponent } from 'vue'
-import { useI18n, useSession } from '#imports'
-import { isEmptyObject } from '~/utils/objectHelpers'
+import {ConcreteComponent} from 'vue'
+import {useI18n, useSession} from '#imports'
+import {isEmptyObject} from '~/utils/objectHelpers'
 
-const { signIn, getSession } = useSession()
+const {signIn, getSession} = useSession()
 const session = await getSession()
 
-const { t } = useI18n()
+const {t} = useI18n()
 const welcomeMessage = computed(() => {
   return `${t('welcome')} ${session?.user?.name}`
 })
@@ -77,7 +77,7 @@ const isType = computed<ConcreteComponent | string>(() => {
  */
 async function federateSignOut(): Promise<void> {
   const headers = useRequestHeaders(['cookie'])
-  const { data: logoutUrl } = await useFetch('/api/auth/logout', { headers: { cookie: headers.cookie || '' } })
+  const {data: logoutUrl} = await useFetch('/api/auth/logout', {headers: {cookie: headers.cookie || ''}})
   window.location.replace(logoutUrl?.value || '/')
 }
 </script>
