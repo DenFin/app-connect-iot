@@ -37,7 +37,7 @@
     "@vitejs/plugin-vue": "3.2.0",
     "@vitest/coverage-c8": "0.28.1",
     "@vue/test-utils": "2.2.7",
-    "cypress": "^11.2.0",
+    "cypress": "^12.3.0",
     "esbuild": "0.14.54",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
