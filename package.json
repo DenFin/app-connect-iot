@@ -36,7 +36,7 @@
     "@testing-library/vue": "6.6.1",
     "@vitejs/plugin-vue": "3.2.0",
     "@vitest/coverage-c8": "0.25.2",
-    "@vue/test-utils": "2.2.6",
+    "@vue/test-utils": "2.2.7",
     "cypress": "^11.2.0",
     "esbuild": "0.14.54",
     "eslint": "^8.30.0",
