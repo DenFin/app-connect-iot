@@ -29,7 +29,7 @@
     "@pinia/testing": "0.0.14",
     "@commitlint/cli": "17.3.0",
     "@commitlint/config-conventional": "17.3.0",
-    "@cypress/webpack-preprocessor": "5.16.0",
+    "@cypress/webpack-preprocessor": "5.16.1",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/tailwindcss": "^6.2.0",
     "@testing-library/jest-dom": "5.16.5",
